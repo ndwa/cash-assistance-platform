@@ -79,7 +79,7 @@ clone it locally, and enter the directory:
 
 ```
 $ git clone git@github.com:your_github_username/cash-assistance-platform.git
-$ cd django-ccf
+$ cd cash-assistance-platform
 ```
 
 #### 3. Install dependencies
@@ -94,7 +94,7 @@ $ pip install -r requirements.txt
 #### 4. Setup environment variables
 
 To add the repo to your Python path, run the following command. **Tip**:
-`path_to_source` should end in `django-ccf/`.
+`path_to_source` should end in `cash-assistance-platform/`.
 
 ```
 $ add2virtualenv path_to_source
