@@ -1,0 +1,11 @@
+Django
+invoke
+psycopg2-binary
+twilio
+phonenumbers
+django-localflavor
+unidecode
+django-admin-honeypot
+django-filter
+django-two-factor-auth
+django-widget-tweaks

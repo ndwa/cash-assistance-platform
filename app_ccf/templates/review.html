@@ -1,0 +1,74 @@
+{% extends "base_ccf.html" %}
+{% load i18n %}
+{% block content %}
+<h4>
+    {% trans "review_heading1" %}
+</h4>
+<div class="row">
+    <div class="col">
+        <form action="" method="post">
+            {% csrf_token %}
+            <p>
+                {% trans "review_paragraph1" %}
+            </p>
+            {% with application=application_model %}
+            <b>{% trans "review_name" %}</b>
+            <p>
+                {{ application.first_name }} {{application.last_name}}
+            </p>
+            <b>{% trans "review_type_of_work" %}</b>
+            <p>
+                {{ application.get_type_of_work_display }}
+            </p>
+            <b>{% trans "review_people_in_household" %}</b>
+            <p>
+                {{ application.household_size }}
+            </p>
+            <b>{% trans "review_household_income" %}</b>
+            <p>
+                {{ application.get_household_income_display }}
+            </p>
+            <b>{% trans "review_address" %}</b>
+            <p>
+                {{ application.addr1 }} <br />
+                {% if application.addr2 %} {{ application.addr2 }} <br />
+                {% endif %}
+                {{ application.city }}, {{ application.state }}
+                {{ application.zip_code }}
+            </p>
+            <b>{% trans "review_phone_number" %}</b>
+            <p>
+                {{ phone_number_display }}
+            </p>
+            {% if application.email %}
+            <b>{% trans "review_email" %}</b>
+            <p>
+                {{ application.email }}
+            </p>
+            {% endif %}
+            {% endwith %}
+
+            {% for error in form.non_field_errors %}
+            <div class="alert alert-danger text-danger" role="alert">
+                {{error}}
+            </div>
+            {% endfor %}
+            <div class="row justify-content-center mb-2">
+                <div class="col">
+                    <input
+                        class="btn btn-primary btn-lg btn-block text-uppercase"
+                        type="submit"
+                        onclick="this.form.submit(); this.disabled=true;"
+                        value="{% trans 'submit_application' %}">
+                </div>
+            </div>
+            <div class="row justify-content-center text-uppercase">
+                <div class="col">
+                    <a href="{% url previous_url %}"
+                        class="btn btn-light btn-secondary btn-lg btn-block">{% trans 'review_back' %}</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

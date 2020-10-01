@@ -1,0 +1,9 @@
+{% extends "base_staff.html" %}
+
+{% block main %}
+<div class="p-4 container-fluid">
+{% for message in messages %}
+  <p class="h3">{{ message }}</p>
+{% endfor %}
+</div>
+{% endblock main %}

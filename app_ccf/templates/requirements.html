@@ -1,0 +1,34 @@
+{% extends "base_form.html" %}
+{% load i18n %}
+{% block formcontent %}
+<h4>
+    {% trans "requirements_header1" %}
+</h4>
+<p>
+{% blocktrans with fund_name=fund_name %}
+To qualify for the {{ fund_name }}, you must meet the following criteria:
+{% endblocktrans %}
+<ul>
+    {% for requirement in eligibility_requirement_list %}
+    <li> {{ requirement | safe }} </li>
+    {% endfor %}
+</ul>
+</p>
+{% if eligibility_requirement_second_title %}
+<p>
+    {{ eligibility_requirement_second_title }}
+    <ul>
+        {% for requirement in eligibility_requirement_second_list %}
+        <li> {{ requirement | safe }} </li>
+        {% endfor %}
+    </ul>
+</p>
+{% endif %}
+<p>
+    <b>{% trans "requirements_learn_more" %}</b>
+</p>
+<p>
+    <b>{% trans "requirements_question" %}</b>
+</p>
+{% include "radio_form.html" with form_field=form.qualified %}
+{% endblock %}

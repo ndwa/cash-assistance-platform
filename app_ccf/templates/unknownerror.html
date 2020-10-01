@@ -1,0 +1,22 @@
+{% extends "base_ccf.html" %}
+{% load i18n %}
+{% block content %}
+<div class="row">
+    <div class="col">
+        <h4 class="text-left">
+            {% trans 'unknownerror_heading' %}
+        </h4>
+        <p>
+{% trans 'unknownerror_paragraph1' %}
+        </p>
+        <p>
+{% blocktrans with customer_service_phone_number=customer_service_phone_number %}
+If this problem continues, please contact us at {{customer_service_phone_number}}.
+{% endblocktrans %}
+        </p>
+{% blocktrans with error_code=status_code %}
+Error code: {{error_code}}
+{% endblocktrans %}
+    </div>
+</div>
+{% endblock %}

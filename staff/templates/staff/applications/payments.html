@@ -1,0 +1,133 @@
+{% extends "base_staff.html" %}
+{% load static i18n %}
+
+{% block main %}
+<div class="p-4 container-fluid">
+  <div>
+    <p class="h4">{% blocktrans %}Payment Actions{% endblocktrans %}</p>
+  </div>
+  {% if status == 'sent_for_payment' %}
+  <div>
+    <p class="h5 mt-4">There are {{ applications_to_process | length }}
+      applications to process</p>
+    <p class="h6 mt-4">Step 2/2: Mark applications as paid</p>
+    <p>Once you’ve sent the the application to the payment processor, tap the
+      button below to update the status.</p>
+    <form id="mark-as-paid-form" style="display: inline;"
+      action="{% url 'staff:mark-as-paid' %}" method="post">{% csrf_token %}
+      <input type="hidden" name="application_ids" value="{{ application_ids }}">
+      <button type="submit" class="btn btn-info">MARK AS PAID</button>
+    </form>
+
+    <button
+      onclick="downloadReport('{{ csrf_token }}', {{ application_ids }}, '{{ status }}', false)"
+      class="btn btn-outline-info">DOWNLOAD CSV
+    </button>
+    <div class="mt-2">
+      <input form="mark-as-paid-form" type="checkbox" name="send_text_messages"
+        checked>
+      <label>After the applications are marked as paid, send a
+        text message to each applicant.</label><br>
+    </div>
+    <p class="mt-4 alert alert-info">Once these applications are marked as paid,
+      a text message will be sent out to each applicant.</p>
+  </div>
+  {% elif status == 'approved' %}
+  <div>
+    <p class="h5 mt-4">There are {{ applications_to_process | length }}
+      applications to process</p>
+    <p class="h6 mt-4">Step 1/2: Download CSV and send applications for payment
+    </p>
+    <p>To begin processing payment for these applications, tap the button below
+      to download a CSV of the applications and send the CSV to the payment
+      processor.</p>
+    <button
+      onclick="downloadReport('{{ csrf_token }}', {{ application_ids }}, 'approved', true)"
+      class="btn btn-primary btn-sm">DOWNLOAD CSV
+    </button>
+  </div>
+  {% else %}
+  {% if num_submitted %}
+  <p>Run approval checks on {{ num_submitted }} newly submitted applications.
+  </p>
+  <form method="post" action="{% url 'staff:auto-process-applications' %}">
+    {% csrf_token %}
+    <button class="btn btn-primary btn-sm" type="submit">CHECK FOR NEW
+      APPLICATIONS</button>
+  </form>
+  {% else %}
+  <p>No application to process.</p>
+  {% endif %}
+  {% endif %}
+  {% if applications_to_process %}
+  <div>
+    <table class="table table-hover mt-4">
+      <thead>
+        <tr>
+          <th scope="col">{% trans 'Name' %}</th>
+          <th scope="col">{% trans 'Submit Date' %}</th>
+          <th scope="col">{% trans 'Status' %}</th>
+          <th scope="col">{% trans 'Note' %}</th>
+          <th scope="col">{% trans 'Code' %}</th>
+          <th scope="col">{% trans 'Phone' %}</th>
+          <th scope="col">{% trans 'Address' %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for app in applications_to_process %}
+        <tr>
+          <td><a
+              href="{% url 'staff:application-detail' app.application_id %}">{{ app.last_name }},
+              {{ app.first_name }}</a></td>
+          <td>{{ app.submitted_date }}</td>
+          <td>{{ app.get_status_display }}</td>
+          <td>{{ app.note }}</td>
+          <td>{{ app.vouchercode_str }}</td>
+          <td>{{ app.phone_number }}</td>
+          <td>{{ app.get_full_address }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+</div>
+
+<script>
+  function downloadReport(csrf_token, application_ids, status, auto_reload) {
+    $.ajaxSetup({
+      beforeSend: function (xhr) {
+        xhr.setRequestHeader('X-CSRFToken', csrf_token);
+      }
+    });
+    $.ajax({
+      url: `${status}/`,
+      type: 'post',
+      data: {
+        'application_ids': JSON.stringify(application_ids),
+      },
+      success: function (response) {
+        // Save the response as a CSV file
+        const downloadLink = document.createElement("a");
+        const blob = new Blob([response]);
+        const url = URL.createObjectURL(blob);
+        downloadLink.href = url;
+        // E.g., ccf_approved-2020-09-10T16_58_33.275Z.csv
+        downloadLink.download =
+          `ccf_${status}-${(new Date()).toISOString()}.csv`;
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+
+        if (auto_reload) {
+          location.reload();
+        }
+      },
+
+      error: function (e) {
+        console.log(e);
+      }
+    })
+  }
+</script>
+{% endblock main %}

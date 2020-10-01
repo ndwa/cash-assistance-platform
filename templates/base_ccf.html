@@ -1,0 +1,71 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+
+<head>
+   <!-- Google Tag Manager (follow instructions here https://developers.google.com/tag-manager/quickstart)-->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+   <link rel="stylesheet" href="{% static "stylesheet.css" %}">
+   {% block head %}
+   {% endblock %}
+</head>
+
+<body class="{{ site_classname }}">
+   <div class="main pb-4 px-4 {{ lang_code }}">
+      <div class="container-fluid text-left justify-content-center pt-3 px-0">
+         <div class="row justify-content-left border-bottom mb-4 pb-3">
+            <div class="col media pr-0">
+                  {% with "ndwa_"|add:lang_code|add:".png" as image_path %}
+                  <img class="ndwa-logo mr-3" src="{% static image_path %}" alt="National Domestic Workers Alliance">
+                  {% endwith %}
+                  <div class="media-body mt-2 mr-1">
+                     <h1> <span class="coronavirus text-uppercase">{% trans 'heading_coronavirus' %} </span>
+                        <span class="care-fund text-uppercase"> {% trans 'heading_care_fund' %} </span>
+                     </h1>
+                  </div>
+            </div>
+         </div>
+         <!-- Only show progress bar if this page corresponds to a step -->
+         {% if step_number > 0 %}
+         <div class="progress">
+            <div class="progress-bar bg-primary" style="width: {% widthratio step_number total_steps 100 %}%"
+               role="progressbar" aria-valuenow="{{ step_number }}" aria-valuemin="0" aria-valuemax="{{total_steps}}">
+            </div>
+         </div>
+         <div class="row mt-1">
+            <div class="col">
+               <p class="meta">
+                  {{ step_number }} {% trans 'of' %} {{total_steps}}
+               </p>  
+            </div>
+         </div>
+         {% endif %}
+         {% block content %}
+         {% endblock %}
+      </div>
+      <div class="push"></div>
+   </div>
+   <div class="footer pl-4 pr-4">
+      <footer class="border-top">
+         <div class="container-fluid pb-4">
+            <div class="row mt-3">
+               <div class="col">
+                  {% trans 'copyright_footer' %}
+               </div>
+            </div>
+            <div class="row mt-1">
+               <div class="col">
+                  <p>
+                     {% trans 'copyright_footer_learn_more' %}
+                  </p>
+               </div>
+            </div>
+         </div>
+      </footer>
+   </div>
+</body>

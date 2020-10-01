@@ -1,0 +1,36 @@
+{% extends "base_ccf.html" %}
+{% load i18n %}
+{% block content %}
+<div class="row text-left">
+    <div class="col">
+        <h4 class="text-left">
+            {% trans 'address_missing_title' %}
+        </h4>
+        <p>
+            {% trans 'address_missing_description1' %}
+        </p>
+        <p>
+            {% trans 'address_missing_description2' %}
+        </p>
+        <p>
+            <b>
+                {% trans 'address_entered_address' %}
+            </b>
+        </p>
+        {% with application=application_model %}
+        {{ application.addr1 }} <br />
+        {% if application.addr2 %} {{ application.addr2 }} <br /> {% endif %}
+        {{ application.city }}, {{ application.state }} {{ application.zip_code }}
+        {% endwith %}
+        <div class="my-3 alert alert-info">
+{% blocktrans with customer_service_phone_number=customer_service_phone_number %}
+Need help? Please call Customer Service at {{customer_service_phone_number}}.
+{% endblocktrans %}
+        </div>
+        <a href="{% url 'mailing-address' %}"
+            class="btn btn-primary btn-lg btn-block text-uppercase">{% trans 'address_edit_address' %}</a>
+        <a href="{{ next_url }}"
+            class="btn btn-light btn-lg btn-block text-uppercase">{% trans 'address_use_anyway' %}</a>
+    </div>
+</div>
+{% endblock %}

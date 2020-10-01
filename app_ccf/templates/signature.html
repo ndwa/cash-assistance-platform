@@ -1,0 +1,45 @@
+{% extends "base_form.html" %}
+{% load i18n %}
+{% block formcontent %}
+<h4>
+    {% trans "signature_tos_heading" %}
+</h4>
+<p>
+    {% trans "signature_paragraph_part1" %}
+    <a target="_blank"
+        class="text-primary"
+        href="{% trans 'signature_tos_link' %}">{% trans "signature_terms_and_conditions_carefund" %}</a>.
+</p>
+
+<div class="form-check pl-0 py-3 mb-3">
+    {{ form.tos }}
+    <label class="form-check-label" for="id_{{form.tos.name}}">
+        {% trans "signature_agree_tos" %}
+    </label>
+</div>
+{% if form.tos.errors %}
+<div class="alert alert-danger error-list my-3 mx-2 px-3 py-3" role="alert">
+    {{ form.tos.errors }}
+</div>
+{% endif %}
+<p>
+
+    <b>
+        {% trans "signature_please_sign" %}
+    </b>
+<p>
+    {% with application=application_session.model %}
+    {% trans "signature_i" %}
+    {{ application.first_name }} {{application.last_name}},
+    {% trans "signature_declare" %}
+    {% endwith %}
+</p>
+</p>
+
+<p>
+    {% trans "agreement_affirm_text" %}
+</p>
+{% trans "signature_signature_text" as signature_title_text %}
+{% trans "signature_type_your_name_text" as signature_caption_text %}
+{% include "text_input_form.html" with extra_form_field_class="px-0" extra_styles="max-width: 328px;" form_field=form.signature title_text=signature_title_text caption_text=signature_caption_text %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base_form.html" %}
+{% load i18n %}
+{% load static %}
+{% block formcontent %}
+<h4>{% trans "disclosure_heading" %}</h4>
+<p>
+    {% trans "disclosure_paragraph2" %}
+</p>
+<p>
+    {% trans "disclosure_paragraph1" %}
+</p>
+<p>
+    {% trans "disclosure_paragraph3" %}
+</p>
+{{ form }}
+{% endblock %}

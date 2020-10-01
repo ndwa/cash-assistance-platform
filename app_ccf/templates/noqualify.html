@@ -1,0 +1,22 @@
+{% extends "base_ccf.html" %}
+{% load i18n %}
+{% block content %}
+<div class="row">
+    <div class="col">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <h4 class="text-left">
+                {% trans 'noqualify_heading1' %}
+            </h4>
+            <p>
+                {% trans 'noqualify_paragraph_unfortunately' %}
+            </p>
+            <p>
+                {% trans 'noqualify_paragraph1' %}
+                <a target="_blank" class="text-primary" href="{% trans 'ccf_faq_link' %}">{% trans 'ccf_faq' %}</a>.
+            </p>
+        </form>
+    </div>
+</div>
+{% endblock %}

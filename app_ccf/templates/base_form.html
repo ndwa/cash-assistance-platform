@@ -1,0 +1,33 @@
+{% extends "base_ccf.html" %}
+{% load i18n %}
+{% block content %}
+<div class="row text-left">
+    <div class="col">
+        <form action="" id="base-form" method="post">
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+            <div class="alert alert-danger error-list my-3 mx-2 px-3 py-3" role="alert">
+                {{ form.non_field_errors }}
+            </div>
+            {% endif %}
+            {% block formcontent %}
+            {% endblock %}
+            <div class="row justify-content-center mt-2">
+                <div class="col">
+                    {% trans "form_loading" as loading_text %}
+                    <input class="btn btn-primary btn-lg btn-block text-uppercase" type="submit" id="next-btn"
+                        value="{% trans 'form_next' %}">
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col">
+                    <a href="{% url previous_url %}"
+                        class="btn btn-light btn-lg btn-block text-uppercase">{% trans 'form_back' %}</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% block extra_body_scripts %}
+{% endblock %}
+{% endblock content %}

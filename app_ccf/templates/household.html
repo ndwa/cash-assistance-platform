@@ -1,0 +1,30 @@
+{% extends "base_form.html" %}
+{% load i18n %}
+{% block formcontent %}
+<h4>
+    {% trans "household_heading1" %}
+</h4>
+<p>
+    {% trans "household_paragraph1" %}
+</p>
+
+{% if not city_name == "Tucson"%}
+    {% trans "houshold_question_size" as household_size_title_text %}
+{% endif %}
+
+{% include "text_input_form.html" with extra_form_field_class="col-2 px-0" form_field=form.household_size title_text=household_size_title_text %}
+<b>{% trans "household_question_income" %}</b>
+{% include "radio_form.html" with form_field=form.household_income %}
+<p>
+    <b>{% trans "profile_ethnicity_question" %}</b>
+</p>
+<div class="text-left">
+    {% include "text_input_form.html" with form_field=form.ethnicity %}
+</div>
+<p>
+    <b>{% trans "household_gender_question" %}</b>
+</p>
+<div class="text-left">
+    {% include "text_input_form.html" with form_field=form.gender %}
+</div>
+{% endblock %}

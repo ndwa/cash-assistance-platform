@@ -1,0 +1,42 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% block head %}
+        <!-- Insert Google Tag Manager -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+            integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'stylesheet.css' %}">
+        {% endblock head %}
+    </head>
+
+    <body>
+        <!-- Insert Google Tag Manager (noscript) -->
+        <div class="main pb-4 px-4 {{ lang_code }}">
+            <div class="container-fluid text-left justify-content-center pt-3 px-0">
+                <div class="row justify-content-left border-bottom mb-4 pb-3">
+                    <div class="col media pr-0">
+                        <img class="ndwa-logo mr-3" src="{% static 'ndwa_en.png' %}" alt="National Domestic Workers Alliance">
+                        <div class="media-body mt-2 mr-1">
+                            <h1> <span class="coronavirus text-uppercase">{% trans 'heading_coronavirus' %} </span>
+                                <span class="care-fund text-uppercase"> {% trans 'heading_care_fund' %} </span>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                {% block content %}
+                {% endblock content %}
+            </div>
+            <div class="push"></div>
+        </div>
+    </body>
+</html>

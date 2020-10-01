@@ -1,0 +1,93 @@
+{% extends "base_staff.html" %}
+{% load static i18n %}
+{% load widget_tweaks %}
+
+{% block main %}
+
+<div class="p-4 container-fluid">
+  <p class="h3">{% blocktrans %}Applications{% endblocktrans %}</p>
+  <div class="" role="toolbar">
+    <div class="">
+      <form class="border p-3" style="width: 900px;" action="" method="get" class="form">
+        <div class="row">
+          <div class="form-group col-sm-4 col-md-3">
+            {{ filter.form.status.label_tag }}
+            {% render_field filter.form.status class="form-control" %}
+          </div>
+          <div class="form-group col-sm-4 col-md-3">
+            {{ filter.form.vouchercode_str__icontains.label_tag }}
+            {% render_field filter.form.vouchercode_str__icontains class="form-control" %}
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-sm-4 col-md-3">
+            {{ filter.form.first_name__unaccent__icontains.label_tag }}
+            {% render_field filter.form.first_name__unaccent__icontains class="form-control" %}
+          </div>
+          <div class="form-group col-sm-4 col-md-3">
+            {{ filter.form.last_name__unaccent__icontains.label_tag }}
+            {% render_field filter.form.last_name__unaccent__icontains class="form-control" %}
+          </div>
+          <div class="form-group col-sm-4 col-md-3">
+            {{ filter.form.phone_number__icontains.label_tag }}
+            {% render_field filter.form.phone_number__icontains class="form-control" %}
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-sm-4 col-md-3">
+            {{ filter.form.addr1__icontains.label_tag }}
+            {% render_field filter.form.addr1__icontains class="form-control" %}
+          </div>
+          <div class="form-group col-sm-4 col-md-3">
+            {{ filter.form.addr2__icontains.label_tag }}
+            {% render_field filter.form.addr2__icontains class="form-control" %}
+          </div>
+          <div class="form-group col-sm-4 col-md-3">
+            {{ filter.form.city__iexact.label_tag }}
+            {% render_field filter.form.city__iexact class="form-control" %}
+          </div>
+          <div class="form-group col-sm-4 col-md-3">
+            {{ filter.form.state__iexact.label_tag }}
+            {% render_field filter.form.state__iexact class="form-control" %}
+          </div>
+        </div>
+        <button class="btn btn-primary btn-sm btn-icon" role="submit">
+          <i class="material-icons md-18">search</i>{% trans 'Search' %}
+        </button>
+      </form>
+    </div>
+    <div class="p-4">
+      Showing <b>{{ application_list | length }}</b> of <b>{{ filter.qs | length }}</b> applications.
+    </div>
+  </div>
+  <div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">{% trans 'Name' %}</th>
+          <th scope="col">{% trans 'Submit Date' %}</th>
+          <th scope="col">{% trans 'Status' %}</th>
+          <th scope="col">{% trans 'Note' %}</th>
+          <th scope="col">{% trans 'Code' %}</th>
+          <th scope="col">{% trans 'Phone' %}</th>
+          <th scope="col">{% trans 'Address' %}</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for app in application_list %}
+        <tr>
+          <td><a href="{% url 'staff:application-detail' app.application_id %}">{{ app.last_name }}, {{ app.first_name }}</a></td>
+          <td>{{ app.submitted_date }}</td>
+          <td>{{ app.get_status_display }}</td>
+          <td>{{ app.note }}</td>
+          <td>{{ app.vouchercode_str }}</td>
+          <td>{{ app.phone_number }}</td>
+          <td>{{ app.get_full_address }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  {% include 'staff/snippets/pagination.html' with object_list=application_list%}
+  </div>
+</div>
+{% endblock main %}

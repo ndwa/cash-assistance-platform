@@ -1,0 +1,16 @@
+{% extends "base_staff.html" %}
+{% load two_factor %}
+
+
+{% block body %}
+{% if user.is_authenticated and user.is_verified %}
+    {{ block.super }}
+{% endif %}
+{% endblock body %}
+
+{% block main %}
+    <div class="col-5 p-2">
+    </div>
+    {% block content %}
+    {% endblock content %}
+{% endblock main %}

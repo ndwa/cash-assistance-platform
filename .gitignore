@@ -1,0 +1,62 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.eggs/
+*.egg-info/
+
+# Django
+# migrations/
+
+# Unit test / coverage reports
+.cache/
+.pytest_cache/
+.coverage
+
+# Logging
+geckodriver.log
+
+# Translations
+*.mo
+*.pot
+
+# SQLite
+*.sqlite*
+
+# Editors
+*~
+
+# bootstrap source
+bootstrap*/
+
+# macOS
+.ds_store
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# Alia specific
+fixture_user_migration.json
+*.csv
+
+# VSCode
+settings.json
+.vscode/*
+*.code-workspace
+*.pylintrc
+
+# Mypy
+.mypy_cache/*
+
+# Ignore /static
+static/*
+
+# Sass
+*/.sass-cache/*

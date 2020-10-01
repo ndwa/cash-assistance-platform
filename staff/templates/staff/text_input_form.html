@@ -1,0 +1,15 @@
+<div class="form-group">
+  {% if title_text %}
+  <label for="{{ form_field.id_for_label }}"><b>{{ title_text }}</b></label>
+  {% endif %}
+  {% if example_text %}
+  <br/>
+  <span class="text-secondary">{{ example_text }}</span>
+  {% endif %}
+  {{ form_field }}
+</div>
+{% if form_field.errors %}
+<div class="alert alert-danger error-list mb-3 mt-3 ml-2 mr-2 pl-3 pr-3 pt-3 pb-3" role="alert">
+  {{ form_field.errors }}
+</div>
+{% endif %}

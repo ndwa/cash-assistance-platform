@@ -1,0 +1,21 @@
+{% extends "base_form.html" %}
+{% load i18n %}
+{% block formcontent %}
+<div class="alert alert-success" role="alert">
+    <b> {% trans "disclosure_vouchercode_success" %} </b>
+</div>
+<h4>
+    {% trans "profile_heading1" %}
+</h4>
+{% trans "profile_first_name" as first_name_title_text %}
+{% include "text_input_form.html" with extra_form_field_class="px-0" extra_styles="max-width: 208px;" form_field=form.first_name title_text=first_name_title_text %}
+{% trans "profile_last_name" as last_name_title_text %}
+{% include "text_input_form.html" with extra_form_field_class="px-0" extra_styles="max-width: 256px;" form_field=form.last_name  title_text=last_name_title_text %}
+<b>{% trans "profile_question_age" %}</b>
+{% include "radio_form.html" with form_field=form.age_range%}
+<b>{% trans "profile_question_work" %}</b>
+<p>
+    {% trans "profile_paragraph_work" %}
+</p>
+{% include "radio_form.html" with form_field=form.type_of_work %}
+{% endblock %}

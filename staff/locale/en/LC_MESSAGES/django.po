@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-29 22:13+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: staff/templates/staff/applications/application_list.html:8
+msgid "Applications"
+msgstr ""
+
+#: staff/templates/staff/applications/application_list.html:59
+#: staff/templates/staff/voucher_list.html:33
+msgid "Search"
+msgstr ""
+
+#: staff/templates/staff/applications/application_list.html:71
+#: staff/templates/staff/applications/payments.html:67
+msgid "Name"
+msgstr ""
+
+#: staff/templates/staff/applications/application_list.html:72
+#: staff/templates/staff/applications/payments.html:68
+msgid "Submit Date"
+msgstr ""
+
+#: staff/templates/staff/applications/application_list.html:73
+#: staff/templates/staff/applications/payments.html:69
+msgid "Status"
+msgstr ""
+
+#: staff/templates/staff/applications/application_list.html:74
+#: staff/templates/staff/applications/payments.html:70
+msgid "Note"
+msgstr ""
+
+#: staff/templates/staff/applications/application_list.html:75
+#: staff/templates/staff/applications/payments.html:71
+#: staff/templates/staff/voucher_list.html:59
+msgid "Code"
+msgstr ""
+
+#: staff/templates/staff/applications/application_list.html:76
+#: staff/templates/staff/applications/payments.html:72
+msgid "Phone"
+msgstr ""
+
+#: staff/templates/staff/applications/application_list.html:77
+#: staff/templates/staff/applications/payments.html:73
+msgid "Address"
+msgstr ""
+
+#: staff/templates/staff/applications/payments.html:7
+msgid "Payment Actions"
+msgstr ""
+
+#: staff/templates/staff/base.html:37
+msgid "heading_coronavirus"
+msgstr ""
+
+#: staff/templates/staff/base.html:38
+msgid "heading_care_fund"
+msgstr ""
+
+#: staff/templates/staff/voucher_list.html:19
+msgid "Codes"
+msgstr ""
+
+#: staff/templates/staff/voucher_list.html:46
+msgid "Invalidate"
+msgstr ""
+
+#: staff/templates/staff/voucher_list.html:60
+msgid "Channel"
+msgstr ""
+
+#: staff/templates/staff/voucher_list.html:61
+msgid "Affiliate"
+msgstr ""
+
+#: staff/templates/staff/voucher_list.html:62
+msgid "Campaign"
+msgstr ""
+
+#: staff/templates/staff/voucher_list.html:63
+msgid "Amount"
+msgstr ""
+
+#: staff/templates/staff/voucher_list.html:64
+msgid "Created"
+msgstr ""
+
+#: staff/templates/staff/voucher_list.html:65
+msgid "Expires"
+msgstr ""
+
+#: staff/templates/staff/voucher_list.html:66
+msgid "Application"
+msgstr ""

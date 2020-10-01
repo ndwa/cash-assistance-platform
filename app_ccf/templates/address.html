@@ -1,0 +1,33 @@
+{% extends "base_form.html" %}
+{% load i18n %}
+{% block head %}
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+{% endblock %}
+{% block formcontent %}
+<h4>
+    {% trans "address_heading1" %}
+</h4>
+<p>
+    {% trans "address_paragraph1" %}
+</p>
+<p>
+    {% trans "address_paragraph2" %}
+</p>
+
+<div class="my-3 alert alert-info">
+    {% trans "address_paragraph3" %}
+</div>
+{% trans "address_street_addr" as addr1_text %}
+{% trans "address_street_addr_example" as addr1_text_example %}
+{% include "text_input_form.html" with extra_form_field_class="px-0" extra_styles="max-width: 328px;" form_field=form.addr1 title_text=addr1_text example_text=addr1_text_example%}
+{% trans "address_apartment" as addr2_text %}
+{% trans "address_apartment_example" as addr2_text_example %}
+{% include "text_input_form.html" with extra_form_field_class="px-0" extra_styles="max-width: 328px;" form_field=form.addr2 title_text=addr2_text example_text=addr2_text_example%}
+{% trans "address_city" as city_title_text %}
+{% include "text_input_form.html" with extra_form_field_class="px-0" extra_styles="max-width: 240px;" form_field=form.city title_text=city_title_text example_text=city_name%}
+{% trans "address_state" as state_title_text %}
+{% include "text_input_form.html" with extra_form_field_class="px-0" extra_styles="max-width: 184px;" form_field=form.state title_text=state_title_text %}
+{% trans "address_zip_code" as zip_code_title_text %}
+{% include "text_input_form.html" with extra_form_field_class="px-0" extra_styles="max-width: 144px;" form_field=form.zip_code title_text=zip_code_title_text example_text=example_city_zip_code %}
+
+{% endblock formcontent %}

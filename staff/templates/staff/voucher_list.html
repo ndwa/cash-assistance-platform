@@ -1,0 +1,149 @@
+{% extends "base_staff.html" %}
+{% block title %}CCF | Staff | Voucher codes {% endblock %}
+{% block sidebar-ccf-application-items %} {{block.super}}
+{% endblock sidebar-ccf-application-items %}
+{% load static i18n %}
+
+
+{% block main %}
+
+<div class="p-4 container-fluid">
+  <!-- Invalidate code success alert -->
+  {% if success %}
+  <p class="alert alert-success" role="">
+    Successfully invalidated
+    {{ num_codes_invalidated }}
+    code(s).
+  </p>
+  {% endif %}
+  <p class="h3">{% blocktrans %}Codes{% endblocktrans %}</p>
+
+  <!-- Code search form -->
+  <style>
+    form          { display: table;      }
+    p:not(.alert) { display: table-row;  }
+    label         { display: table-cell; padding: 0px 10px 15px 0px ;}
+    input         { display: table-cell; }
+  </style>
+  <div class="" role="toolbar">
+    <div style="padding-top: 10px">
+      <form class="border p-3" action="" method="get" class="form">
+        {{ filter.form.as_p }}
+        <button class="btn btn-primary btn-sm btn-icon" role="submit">
+          <i class="material-icons md-18">search</i>{% trans 'Search' %}
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Number of codes found (+ invalidate button if a search was submitted) -->
+  <div>
+    <p>
+      <br />
+      {% if params_GET and not success %}
+      Showing <b>{{ object_list | length }}</b> code{{ object_list|length|pluralize:"s" }} of out <b>{{ filter.qs | length }}</b>.
+      <button class="btn btn btn-danger btn-large text-uppercase" id="invalidate" role="submit">
+        {% trans 'Invalidate' %}
+      </button>
+      {% else %}
+      Total of <b>{{ filter.qs | length }}</b> code{{ object_list|length|pluralize:"s" }} found.
+      {% endif %}
+    </p>
+  </div>
+
+  <!-- Code search results -->
+  <div>
+    <table class="table table-hover mt-4">
+      <thead>
+        <tr>
+          <th scope="col">{% trans 'Code' %}</th>
+          <th scope="col">{% trans 'Channel' %}</th>
+          <th scope="col">{% trans 'Affiliate' %}</th>
+          <th scope="col">{% trans 'Campaign' %}</th>
+          <th scope="col">{% trans 'Amount' %}</th>
+          <th scope="col">{% trans 'Created' %}</th>
+          <th scope="col">{% trans 'Expires' %}</th>
+          <th scope="col">{% trans 'Application' %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for voucher_code in object_list %}
+        <tr>
+          <td>{{ voucher_code.code }}</td>
+          <td>{{ voucher_code.batch.channel }}</td>
+          <td>{{ voucher_code.batch.affiliate }}</td>
+          <td>{{ voucher_code.batch.campaign }}</td>
+          <td>{{ voucher_code.amount }}</td>
+          <td>{{ voucher_code.batch.created }}</td>
+          <td>{{ voucher_code.batch.expiration_date }}</td>
+          {% if voucher_code.application_id %}
+          <td><a href="{% url 'staff:application-detail' voucher_code.application_id %}">
+            {{ voucher_code.application.last_name }}, {{ voucher_code.application.first_name }}
+          </a></td>
+          {% else %}
+          <td><a href="{% url 'staff:create-app-redirect' voucher_code.code_formatted %}" target="_blank">
+            Create <i class="material-icons md-18">launch</i>
+          </a></td>
+          {% endif %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% include 'staff/snippets/pagination.html' with object_list=object_list%}
+  </div>
+</div>
+
+<!-- Invalidate confirmation modal -->
+<div class="modal" id="voucher-invalidate-mdl" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        Review
+      </div>
+      <div class="modal-body">
+
+        <p>
+          Are you sure you want to invalidate the
+          <b><span id="num_codes" style="white-space: pre-wrap;"></span></b>
+          code(s) from this search?
+        </p>
+        <br/>
+
+        <form action="{% url 'staff:voucher-list-invalidate' %}" style="display:block;margin-bottom: 10px" method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger btn-block btn-large text-uppercase" name='submit-invalidate' value='{{ code_list }}'>Invalidate</button>
+        </form>
+        <button type="button" class="btn btn-outline-secondary btn-block btn-large text-uppercase" data-dismiss="modal">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap/jQuery scripts -->
+<script
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous">
+</script>
+<script
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+crossorigin="anonymous">
+</script>
+
+<!-- Button setup scripts -->
+<script>
+  // Set up confirmation modal when invalidate is clicked
+  $('#invalidate').attr('type', 'button');
+  $('#invalidate').click(function() {
+    $('#voucher-invalidate-mdl').modal('show');
+    $('#num_codes').text('{{ filter.qs | length }}');
+    $('#confirm-btn').click(function() {
+      $('#voucher_form').submit();
+    });
+  });
+</script>
+
+{% endblock main %}

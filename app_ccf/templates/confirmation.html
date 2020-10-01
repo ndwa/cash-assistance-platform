@@ -1,0 +1,33 @@
+{% extends "base_ccf.html" %}
+{% load i18n %}
+{% block content %}
+<h4>
+    {% trans 'confirmation_application_approved' %}
+</h4>
+<p>
+    {% trans "confirmation_paragraph1" %}
+</p>
+<p>
+<ul>
+    <li>
+        {% trans "confirmation_bulletpoint_1" %}
+    </li>
+    <li>
+        {% blocktrans trimmed with customer_service_phone_number=customer_service_phone_number %}
+        You will receive a text notification when we have sent your card out. If you
+        have questions about your card, please call us at <b>{{ customer_service_phone_number }}</b>.
+        {% endblocktrans %}
+    </li>
+    <li>
+        {% trans "confirmation_bulletpoint_3" %}
+    </li>
+</ul>
+</p>
+<p>
+    {% trans "confirmation_paragraph2" %}
+</p>
+<p>
+    {% trans "confirmation_paragraph3" %}
+</p>
+
+{% endblock %}

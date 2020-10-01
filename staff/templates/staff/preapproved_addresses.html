@@ -1,0 +1,226 @@
+{% extends "base_staff.html" %}
+{% block title %}CCF | Staff | Preapproved addresses {% endblock %}
+{% block sidebar-ccf-application-items %} {{block.super}}
+{% endblock sidebar-ccf-application-items %}
+
+
+{% block main %}
+
+<div class="p-4 container-fluid">
+  <!-- Address added success alert -->
+  {% if form.errors %}
+  <div class="alert alert-danger" role="">
+    <b>Error(s):</b>
+    {{ form.errors }}
+  </div>
+  {% elif success %}
+  <p class="alert alert-success" role="">
+    Successfully added new address ("{{ note }}").
+  </p>
+  {% endif %}
+
+  <!-- Add address form -->
+  <h3>
+    Preapproved Addresses
+  </h3>
+
+  <p>
+    Add and view preapproved addresses. Applications from an address on this list will bypass the duplicate address fraud check.
+  </p>
+
+  <p style="font-size: 0.01em"></p>
+  <div class="row text-justify">
+    <div class="col">
+      <div class="form-group">
+        <form class="border col-4 p-3" id="voucher_form" method="post">
+          {% csrf_token %}
+          <div class="col-12 px-0">
+            <p>
+              {{ form.addr1.label_tag }}
+              {{ form.addr1 }}
+            </p>
+          </div>
+          <div class="col-8 px-0">
+            <p>
+              {{ form.city.label_tag }}
+              {{ form.city }}
+            </p>
+          </div>
+          <div class="col-6 px-0">
+            <p>
+              {{ form.state.label_tag }}
+              {{ form.state }}
+            </p>
+          </div>
+          <div class="col-4 px-0">
+            <p>
+              {{ form.zip_code.label_tag }}
+              {{ form.zip_code }}
+            </p>
+          </div>
+          <div class="col-12 px-0">
+            <p>
+              {{ form.note.label_tag }}
+              {{ form.note }}
+            </p>
+          </div>
+          <div class=""><input class="btn btn-primary btn-sm text-uppercase" type="submit" id="submit-btn" value="Add Address"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Confirmation modal -->
+<div class="modal" id="confirm-generate-mdl" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span id="modal-header-message"></span>
+      </div>
+      <div class="modal-body">
+        <p><span id="prompt-message"></span></p>
+        <ul style="list-style-type:none">
+          <p><span id="validated-addr" style="white-space: pre-wrap;"></span></p>
+        </ul>
+        <p><span id="entered_note"></span></p>
+        <button type="button" id="confirm-btn" class="btn btn-info btn-block btn-large text-uppercase">
+          Confirm
+        </button>
+        <button type="button" class="btn btn-outline-secondary btn-block btn-large text-uppercase" data-dismiss="modal">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Address list -->
+<div class="p-4 container-fluid">
+  <div>
+    <table class="table table-hover mt-4">
+      <thead>
+        <tr>
+          <th scope="col">Address 1</th>
+          <th scope="col">City</th>
+          <th scope="col">State</th>
+          <th scope="col">Zip</th>
+          <th scope="col">Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for address in object_list %}
+        <tr>
+          <td>{{ address.addr1 }}</td>
+          <td>{{ address.city }}</td>
+          <td>{{ address.state }}</td>
+          <td>{{ address.zip_code }}</td>
+          <td>{{ address.note }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% include 'staff/snippets/pagination.html' %}
+  </div>
+</div>
+
+<!-- Bootstrap/jQuery scripts -->
+<script
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous">
+</script>
+<script
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+crossorigin="anonymous">
+</script>
+
+<!-- Button setup scripts -->
+<script>
+  function getXmlTagValue(xml, tagName) {
+    var elements = xml.getElementsByTagName(tagName);
+    if (elements.length > 0) {
+      var childNodes = elements[0].childNodes;
+      if (childNodes.length > 0) {
+        return childNodes[0].nodeValue;
+      }
+    }
+    return '';
+  }
+
+  // Set up confirmation modal when submit is clicked
+  $('#submit-btn').attr('type', 'button');
+  $('#submit-btn').click(function() {
+    var entered_addr1 = $('#id_addr1').val();
+    var entered_addr2 = '';
+    var entered_city = $('#id_city').val();
+    var entered_state = $('#id_state').val();
+    var entered_zip = $('#id_zip_code').val();
+    var entered_note = $('#id_note').val();
+
+    var addressXml = `<AddressValidateRequest USERID="804ACME06893">
+    <Address>
+    <Address1>${entered_addr2}</Address1>
+    <Address2>${entered_addr1}</Address2>
+    <City>${entered_city}</City>
+    <State>${entered_state}</State>
+    <Zip5>${entered_zip}</Zip5>
+    <Zip4></Zip4>
+    </Address>
+    </AddressValidateRequest>`;
+
+    $.ajax({
+      url: 'https://secure.shippingapis.com/ShippingAPI.0dll',
+      type: 'get',
+      data: {
+        API: 'Verify',
+        XML: addressXml,
+      },
+      success: function(response) {
+        var verified_addr1 = getXmlTagValue(response, 'Address2');
+        var verified_addr2 = getXmlTagValue(response, 'Address1');
+        var verified_city = getXmlTagValue(response, 'City');
+        var verified_state = getXmlTagValue(response, 'State');
+        var verified_zip = getXmlTagValue(response, 'Zip5');
+        var returnText = getXmlTagValue(response, 'ReturnText');
+        var errorDescription = getXmlTagValue(response, 'Description');
+
+        var full_address = verified_addr1 + verified_addr2 + '\n' + verified_city + ', ' + verified_state + ' ' +
+        verified_zip;
+
+        if (errorDescription) {
+          $('#modal-header-message').text('USPS verification error');
+          $('#prompt-message').text('Address not found. Please check that all the fields are correct and try again.');
+          $('#validated-addr').text('');
+          $('#entered_note').text('');
+          $('#confirm-btn').hide();
+        } else {
+          $('#modal-header-message').text('Review');
+          $('#prompt-message').text('You are about to add the following address to the preapproved list:');
+          $('#validated-addr').text('"' + entered_note + '"' + '\n' + full_address);
+          $('#confirm-btn').show();
+          $('#confirm-btn').click(function() {
+            $('#id_addr1').val(verified_addr1);
+            $('#id_state').val(verified_state);
+            $('#id_city').val(verified_city);
+            $('#id_zip_code').val(verified_zip);
+            $('#voucher_form').submit();
+          });
+        }
+        $('#confirm-generate-mdl').modal('show');
+      },
+      error: function(xhr) {
+        $('#modal-header-message').text('Unknown USPS error');
+        $('#prompt-message').text('Unable to reach USPS validation service. Check your internet connection or contact support for help.')
+        $('#validated-addr').text('');
+        $('#entered_note').text('');
+        $('#confirm-btn').hide();
+        $('#confirm-generate-mdl').modal('show');
+      }
+    });
+  });
+</script>
+
+{% endblock %}
+

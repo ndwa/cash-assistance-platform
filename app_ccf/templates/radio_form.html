@@ -1,0 +1,17 @@
+<div class="form-group">
+  {% for pk, choice in form_field.field.widget.choices %}
+  {% if choice %}
+  <div class="custom-control custom-radio py-3">
+    <input id="id_{{form_field.name}}_{{ forloop.counter0 }}" name="{{form_field.name}}"
+      type="{{form_field.field.widget.input_type}}" value="{{pk}}" class="custom-control-input"
+      {% ifequal form_field.value pk %} checked="checked" {% endifequal %} />
+    <label for="id_{{form_field.name}}_{{ forloop.counter0 }}" class="custom-control-label">{{ choice }}</label>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+{% if form_field.errors %}
+<div class="alert alert-danger error-list my-3 mx-2 px-3 py-3" role="alert">
+  {{ form_field.errors }}
+</div>
+{% endif %}

@@ -1,0 +1,25 @@
+{% extends "base_ccf.html" %}
+{% load i18n %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col">
+        <h2 class="text-center">
+        <strong>
+            ¡Bienvenida al {{ fund_name_es }}!
+        </strong>
+        </h2>
+        <h2 class="text-center font-weight-normal">
+            Welcome to the {{ fund_name_en }}!
+        </h2>
+        <a href="/es/welcome" class="mt-4 btn btn-primary btn-lg btn-block text-uppercase">
+            Continuar en Español
+        </a>
+        <a href="/en/welcome" class="btn btn-primary btn-orange btn-lg btn-block text-uppercase">
+            Continue in English
+        </a>
+        <img class="mt-5 mx-auto d-block" src="{% static "powered_by_alia.png" %}" alt="Powered by alia" />
+        <img class="img-fluid my-5 mx-2" src="{% static "rosie_corona.png" %}" alt="Rosie Corona Care Fund Workers"/>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,156 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: white;
+    font-weight: 400;
+}
+
+/*
+Sticky footer technnique from:
+https://css-tricks.com/couple-takes-sticky-footer/#article-header-id-0
+
+Give the body full viewport height for the content.
+*/
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.main {
+    min-height: 100%;
+    margin-bottom: -250px;
+}
+
+/* place the footer at the very bottom where the negative margin allows*/
+.footer,
+.push {
+  height: 250px;
+}
+.footer {
+    /* give footer full width to display color in the full width of page */
+    width: 100%;
+    background: #f2f2f2;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+h4 {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+b {
+    font-weight: 500;
+}
+
+.container-fluid {
+    max-width: 600px;
+    margin: 0 auto;
+    /*make it centered*/
+}
+
+
+.btn-success,
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success:active:focus {
+    background: #05a8aa !important;
+    border: #05a8aa solid !important;
+}
+
+.btn-light,
+.btn-light:hover,
+.btn-light:focus,
+.btn-light:active,
+.btn-light:active:focus {
+    background: white !important;
+    border: grey solid !important;
+    color: grey !important;
+}
+
+.btn {
+    font-weight: bold;
+}
+
+.bg-success {
+    background: #05a8aa !important;
+}
+
+.coronavirus {
+    color: #05a8aa;
+    font-size: 1.3em;
+    font-weight: 700;
+    display: block;
+    white-space: nowrap;
+    margin: 0;
+}
+
+h1 {
+    font-size: 1em;
+}
+
+.care-fund {
+    color: #e15949;
+    font-size: 1.65em;
+    font-weight: 700;
+    display: block;
+    white-space: nowrap;
+    margin: 0;
+}
+
+a,
+a:hover {
+    color: #05a8aa;
+}
+
+footer a,
+footer a:hover {
+    color: #373a3c;
+}
+
+footer a.fa {
+    color: #373a3c;
+    text-decoration: none;
+}
+
+footer a.fa:hover {
+    text-decoration: underline;
+}
+
+.error-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.btn-success.disabled, .btn-success:disabled {
+    background: #cccccc !important;
+    border: #cccccc solid !important;
+    color: #838c92;
+}
+
+.voucher-code-input-form input {
+    display: inline;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.voucher-code-input-form {
+    color: #cccccc;
+}
+
+.form-phone-input input {
+    display: inline;
+    width: 3.6em;
+}
+.form-phone-input input:last-child {
+    display: inline;
+    width: 4.4em;
+}
+
+.form-phone-input {
+    color: #cccccc;
+}
+

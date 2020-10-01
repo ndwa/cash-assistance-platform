@@ -1,0 +1,796 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-29 22:13+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app_ccf/common.py:114 app_ccf/forms.py:44 app_ccf/forms.py:48
+msgid "voucher_input_incorrect_format"
+msgstr ""
+"Invalid code. Access codes must be 9 letters and cannot be used more than "
+"once."
+
+#: app_ccf/config.py:15
+msgid "ccf_fund_name"
+msgstr "Coronavirus Care Fund"
+
+#: app_ccf/config.py:18 app_ccf/templates/noqualify.html:17
+#: app_ccf/templates/welcome.html:22
+msgid "ccf_faq_link"
+msgstr "#"
+
+#: app_ccf/config.py:19 app_ccf/templates/noqualify.html:17
+#: app_ccf/templates/welcome.html:22
+msgid "ccf_faq"
+msgstr "Coronavirus Care Fund FAQ"
+
+#: app_ccf/config.py:24
+msgid "requirements_eighteen_or_older"
+msgstr "Be 18 years or older."
+
+#: app_ccf/config.py:25
+msgid "requirements_income_source"
+msgstr ""
+"Before the coronavirus crisis, your primary source of income came from "
+"childcare, house cleaning, or caring for elders or people with disabilities."
+
+#: app_ccf/config.py:26
+msgid "requirements_experiencing_hardship"
+msgstr "You are experiencing financial hardship due to the pandemic."
+
+#: app_ccf/config.py:27
+msgid "requirements_live_in_us"
+msgstr "Live in the United States."
+
+#: app_ccf/forms.py:30 app_ccf/forms.py:37
+msgid "yes"
+msgstr "Yes"
+
+#: app_ccf/forms.py:30 app_ccf/forms.py:37
+msgid "no"
+msgstr "No"
+
+#: app_ccf/forms.py:92
+#, python-brace-format
+msgid ""
+"At this time, the {fund_name} is only open to applicants that are 18 years "
+"or older."
+msgstr ""
+
+#: app_ccf/forms.py:115
+msgid "ethnicity_latina"
+msgstr "Latina/Hispana"
+
+#: app_ccf/forms.py:117
+msgid "ethnicity_black"
+msgstr "Black/African American/Afro-descendent"
+
+#: app_ccf/forms.py:119
+msgid "ethnicity_asian"
+msgstr "Asian/Pacific Islander"
+
+#: app_ccf/forms.py:121
+msgid "ethnicity_indigenous"
+msgstr "Indigenous"
+
+#: app_ccf/forms.py:122
+msgid "ethnicity_white"
+msgstr "White"
+
+#: app_ccf/forms.py:123
+msgid "ethnicity_other"
+msgstr "Other"
+
+#: app_ccf/forms.py:129
+msgid "gender_female"
+msgstr "Female"
+
+#: app_ccf/forms.py:131
+msgid "gender_male"
+msgstr "Male"
+
+#: app_ccf/forms.py:133
+msgid "gender_transgender"
+msgstr "Transgender"
+
+#: app_ccf/forms.py:135
+msgid "gender_nonbinary"
+msgstr "Nonbinary/third gender"
+
+#: app_ccf/forms.py:137
+msgid "gender_other"
+msgstr "Other"
+
+#: app_ccf/forms.py:156
+msgid "This field is required."
+msgstr "Este campo es requerido."
+
+#: app_ccf/forms.py:159
+msgid "Ensure this value is greater than or equal to 1."
+msgstr ""
+
+#: app_ccf/forms.py:183
+msgid "select_one"
+msgstr "Select one"
+
+#: app_ccf/models.py:31
+msgid "17_or_younger"
+msgstr "17 or younger"
+
+#: app_ccf/models.py:32
+msgid "18-29"
+msgstr "18-29"
+
+#: app_ccf/models.py:33
+msgid "30-49"
+msgstr "30-49"
+
+#: app_ccf/models.py:34
+msgid "50-69"
+msgstr "50-69"
+
+#: app_ccf/models.py:35
+msgid "70_or_older"
+msgstr "70 or older"
+
+#: app_ccf/models.py:38
+msgid "under_20k"
+msgstr "Under $20,000 per year (Less than $385 per week)"
+
+#: app_ccf/models.py:40
+msgid "between_20k_39k"
+msgstr "Between $20,000 and $39,999 per year ($385-$770 per week)"
+
+#: app_ccf/models.py:42
+msgid "between_40k_59k"
+msgstr "Between $40,000 and $59,999 per year ($770-$1155 per week)"
+
+#: app_ccf/models.py:44
+msgid "between_60k_79k"
+msgstr "Between $60,000 and $79,999 per year ($1155-$1540 per week)"
+
+#: app_ccf/models.py:45
+msgid "above_80k"
+msgstr "$80,000 or above per year (More than $1,540 per week)"
+
+#: app_ccf/models.py:48
+msgid "Español"
+msgstr "Español"
+
+#: app_ccf/models.py:49
+msgid "English"
+msgstr "English"
+
+#: app_ccf/models.py:161
+msgid "phone_number_incorrect_format"
+msgstr "Phone number must consist of the country code plus at least 7 digits."
+
+#: app_ccf/models.py:271
+msgid "voucher_code_invalid_format"
+msgstr "The access code must consist of 9 alphanumeric characters."
+
+#: app_ccf/templates/address.html:8
+msgid "address_heading1"
+msgstr "Mailing Address"
+
+#: app_ccf/templates/address.html:11
+msgid "address_paragraph1"
+msgstr ""
+"If your request is approved, you will receive a prepaid debit card by mail. "
+"You must provide a United States mailing address."
+
+#: app_ccf/templates/address.html:14
+msgid "address_paragraph2"
+msgstr ""
+"Unfortunately, we are not able to send gift cards to Puerto Rico at this "
+"time."
+
+#: app_ccf/templates/address.html:18
+msgid "address_paragraph3"
+msgstr ""
+"Tip: Try using the address in a previous letter you received at home to fill "
+"out the following fields."
+
+#: app_ccf/templates/address.html:20
+msgid "address_street_addr"
+msgstr "Street Address"
+
+#: app_ccf/templates/address.html:21
+msgid "address_street_addr_example"
+msgstr "45 Broadway"
+
+#: app_ccf/templates/address.html:23
+msgid "address_apartment"
+msgstr "Apartment/Suite/Other - Optional"
+
+#: app_ccf/templates/address.html:24
+msgid "address_apartment_example"
+msgstr "320"
+
+#: app_ccf/templates/address.html:26
+msgid "address_city"
+msgstr "City"
+
+#: app_ccf/templates/address.html:28
+msgid "address_state"
+msgstr "State"
+
+#: app_ccf/templates/address.html:30
+msgid "address_zip_code"
+msgstr "Zipcode"
+
+#: app_ccf/templates/address_missing_apt.html:7
+msgid "address_missing_title"
+msgstr ""
+"Your address is either missing a unit number or contains an incorrect unit "
+"number."
+
+#: app_ccf/templates/address_missing_apt.html:10
+msgid "address_missing_description1"
+msgstr ""
+"We found the address you entered, but the unit number is either missing or "
+"incorrect."
+
+#: app_ccf/templates/address_missing_apt.html:13
+msgid "address_missing_description2"
+msgstr "To ensure accurate delivery, please edit your address."
+
+#: app_ccf/templates/address_missing_apt.html:17
+#: app_ccf/templates/address_unverified.html:14
+msgid "address_entered_address"
+msgstr "Entered Address"
+
+#: app_ccf/templates/address_missing_apt.html:26
+#: app_ccf/templates/address_unverified.html:24
+#: app_ccf/templates/vouchercode.html:23
+#, python-format
+msgid ""
+"\n"
+"Need help? Please call Customer Service at "
+"%(customer_service_phone_number)s.\n"
+msgstr ""
+
+#: app_ccf/templates/address_missing_apt.html:31
+#: app_ccf/templates/address_unverified.html:30
+#: app_ccf/templates/address_verify.html:63
+msgid "address_edit_address"
+msgstr "EDIT ADDRESS"
+
+#: app_ccf/templates/address_missing_apt.html:33
+msgid "address_use_anyway"
+msgstr "Use this address anyway"
+
+#: app_ccf/templates/address_unverified.html:7
+msgid "address_unable_to_verify"
+msgstr "Unable to verify your mailing address"
+
+#: app_ccf/templates/address_unverified.html:10
+msgid "address_unable_to_match"
+msgstr ""
+"We were unable to find a US mailing address that matches the one you "
+"entered. To ensure accurate delivery, please edit your address."
+
+#: app_ccf/templates/address_verify.html:10
+msgid "address_verification_heading"
+msgstr "Address Verification"
+
+#: app_ccf/templates/address_verify.html:13
+msgid "address_modified_address"
+msgstr ""
+"We have slightly modified the address entered. If correct, please use the "
+"selected address to ensure accurate delivery."
+
+#: app_ccf/templates/address_verify.html:23
+msgid "address_original_address"
+msgstr "Original address"
+
+#: app_ccf/templates/address_verify.html:42
+msgid "address_updated_address"
+msgstr "Updated address"
+
+#: app_ccf/templates/address_verify.html:61
+msgid "address_use_this_address"
+msgstr "USE THIS ADDRESS"
+
+#: app_ccf/templates/base_form.html:17
+msgid "form_loading"
+msgstr "Loading"
+
+#: app_ccf/templates/base_form.html:19
+msgid "form_next"
+msgstr "Next"
+
+#: app_ccf/templates/base_form.html:25
+msgid "form_back"
+msgstr "Back"
+
+#: app_ccf/templates/confirmation.html:5
+msgid "confirmation_application_approved"
+msgstr "Success!"
+
+#: app_ccf/templates/confirmation.html:8
+msgid "confirmation_paragraph1"
+msgstr "Your request has been successfully submitted."
+
+#: app_ccf/templates/confirmation.html:13
+msgid "confirmation_bulletpoint_1"
+msgstr "You should receive your prepaid debit card in the mail in 3 weeks. "
+
+#: app_ccf/templates/confirmation.html:16
+#, python-format
+msgid ""
+"You will receive a text notification when we have sent your card out. If you "
+"have questions about your card, please call us at <b>"
+"%(customer_service_phone_number)s</b>."
+msgstr ""
+
+#: app_ccf/templates/confirmation.html:22
+msgid "confirmation_bulletpoint_3"
+msgstr ""
+"Visit the <a target=\"_blank\" class=\"text-primary\" href=\"https://help."
+"ccf.myalia.org/en/collections/2426131-coronavirus-care-fund-faq"
+"\">Coronavirus Care Fund FAQ</a> to learn more about the fund, including "
+"where and how you can use your card, and see other resources to help "
+"domestic workers during this pandemic."
+
+#: app_ccf/templates/confirmation.html:27
+msgid "confirmation_paragraph2"
+msgstr ""
+"Our entire mission at the National Domestic Workers Alliance and Alia is to "
+"support domestic workers to live and work with dignity. We hope that this "
+"card will help you weather the coronavirus crisis and that together we'll be "
+"able to win the security and safety we all need and deserve. We see you, "
+"support you and appreciate you!"
+
+#: app_ccf/templates/confirmation.html:30
+msgid "confirmation_paragraph3"
+msgstr ""
+"Go to the <a target=\"_blank\" class=\"text-primary\" href=\"https://help."
+"ccf.myalia.org/en/collections/2426131-coronavirus-care-fund-faq"
+"\">Coronavirus Care Fund FAQ</a>"
+
+#: app_ccf/templates/contact.html:5
+msgid "contact_heading1"
+msgstr "Contact Information"
+
+#: app_ccf/templates/contact.html:7
+msgid "contact_phone_number"
+msgstr "Phone number"
+
+#: app_ccf/templates/contact.html:8
+msgid "contact_phone_number_example"
+msgstr "555-555-5555"
+
+#: app_ccf/templates/contact.html:10
+msgid "contact_email_example"
+msgstr "lgarcia@website.com"
+
+#: app_ccf/templates/contact.html:11
+msgid "contact_email"
+msgstr "Email - Optional"
+
+#: app_ccf/templates/contact.html:14
+msgid "contact_no_email_alert"
+msgstr ""
+"If you don't have an email, don't worry, we can follow up with you by text "
+"or phone."
+
+#: app_ccf/templates/contact.html:18
+msgid "contact_paragraph1"
+msgstr ""
+"We’ll use the phone number you provided to send text message updates on your "
+"application’s status. If you provide a cell number, you agree to receive "
+"occasional texts from Alia and NDWA. Data & text message rates may apply. "
+"You can opt-out at any time by texting STOP."
+
+#: app_ccf/templates/disclosure.html:5
+msgid "disclosure_heading"
+msgstr "Ongoing support provided by Alia"
+
+#: app_ccf/templates/disclosure.html:7
+msgid "disclosure_paragraph2"
+msgstr ""
+"NDWA created Alia to be a safety net for domestic workers like you. With "
+"Alia, you can access benefits like paid time off and insurance that stay "
+"with you."
+
+#: app_ccf/templates/disclosure.html:10
+msgid "disclosure_paragraph1"
+msgstr ""
+"The Coronavirus Care Fund is administered by Alia. By providing the "
+"information on this form, you agree to Alia’s <a class=\"text-primary\"href="
+"\"https://cleaner.myalia.org/terms-and-conditions\" target=\"_blank\"> Terms "
+"of Use </a> and <a class=\"text-primary\" href=\"https://www.myalia.org/"
+"privacy-policy\" target=\"_blank\">Privacy Policy</a> and authorizing us to "
+"create an Alia account on your behalf."
+
+#: app_ccf/templates/disclosure.html:13
+msgid "disclosure_paragraph3"
+msgstr ""
+"Please visit <a class=\"text-primary\" href=\"http://myalia.org\" target="
+"\"_blank\"> myalia.org </a>  to learn more."
+
+#: app_ccf/templates/household.html:5
+msgid "household_heading1"
+msgstr "Additional Information"
+
+#: app_ccf/templates/household.html:8
+msgid "household_paragraph1"
+msgstr ""
+"Please share the following information about your household so that we "
+"understand who is accessing the Fund. Your answer will <b>not</b> affect "
+"your eligibility or the amount of assistance you receive."
+
+#: app_ccf/templates/household.html:12
+msgid "houshold_question_size"
+msgstr "How many people are in your household?"
+
+#: app_ccf/templates/household.html:16
+msgid "household_question_income"
+msgstr ""
+"What was your typical household income prior to the Coronavirus crisis?"
+
+#: app_ccf/templates/household.html:19
+msgid "profile_ethnicity_question"
+msgstr "What is your race or ethnicity? - <i> Optional </i>"
+
+#: app_ccf/templates/household.html:25
+msgid "household_gender_question"
+msgstr "What is your gender? - <i> Optional </i>"
+
+#: app_ccf/templates/noqualify.html:10
+msgid "noqualify_heading1"
+msgstr "We're sorry, you do not qualify at this time."
+
+#: app_ccf/templates/noqualify.html:13
+msgid "noqualify_paragraph_unfortunately"
+msgstr ""
+"Unfortunately, you don't qualify to receive assistance from the Coronavirus "
+"Care Fund, which provides emergency assistance specifically to domestic "
+"workers 18 years or older."
+
+#: app_ccf/templates/noqualify.html:16
+msgid "noqualify_paragraph1"
+msgstr "To learn more about eligibility requirements, please visit our"
+
+#: app_ccf/templates/novouchercode.html:10
+msgid "novouchercode_heading"
+msgstr ""
+"We're sorry, we are only accepting requests with access codes at this time."
+
+#: app_ccf/templates/novouchercode.html:13
+msgid "novouchercode_paragraph1"
+msgstr "To learn more about how to get an access code, please visit our"
+
+#: app_ccf/templates/profile.html:5
+msgid "disclosure_vouchercode_success"
+msgstr ""
+"Your access code has been verified! To ensure your request is completed, "
+"please complete all steps of this form until you get to the page labeled "
+"\"Success!\"."
+
+#: app_ccf/templates/profile.html:8
+msgid "profile_heading1"
+msgstr "Profile information"
+
+#: app_ccf/templates/profile.html:10
+msgid "profile_first_name"
+msgstr "First name"
+
+#: app_ccf/templates/profile.html:12
+msgid "profile_last_name"
+msgstr "Last name"
+
+#: app_ccf/templates/profile.html:14
+msgid "profile_question_age"
+msgstr "What's your age?"
+
+#: app_ccf/templates/profile.html:16
+msgid "profile_question_work"
+msgstr "What type of domestic work do you usually do?"
+
+#: app_ccf/templates/profile.html:18
+msgid "profile_paragraph_work"
+msgstr ""
+"If you have done multiple types, please select the one you have spent the "
+"most time doing."
+
+#: app_ccf/templates/requirements.html:5
+msgid "requirements_header1"
+msgstr "Check to see if you qualify"
+
+#: app_ccf/templates/requirements.html:8
+#, python-format
+msgid ""
+"\n"
+"To qualify for the %(fund_name)s, you must meet the following criteria:\n"
+msgstr ""
+
+#: app_ccf/templates/requirements.html:28
+msgid "requirements_learn_more"
+msgstr ""
+"To learn more about these requirements, please visit our <a target=\"_blank"
+"\" class=\"text-primary\" href=\"https://help.ccf.myalia.org/en/"
+"collections/2426131-coronavirus-care-fund-faq\">Coronavirus Care Fund FAQ</"
+"a>."
+
+#: app_ccf/templates/requirements.html:31
+msgid "requirements_question"
+msgstr "Do you meet these requirements?"
+
+#: app_ccf/templates/review.html:5
+msgid "review_heading1"
+msgstr "Review your request"
+
+#: app_ccf/templates/review.html:12
+msgid "review_paragraph1"
+msgstr ""
+"Your request form is almost complete! Take a minute to review your "
+"information before submitting your request."
+
+#: app_ccf/templates/review.html:15
+msgid "review_name"
+msgstr "Name"
+
+#: app_ccf/templates/review.html:19
+msgid "review_type_of_work"
+msgstr "Type of work"
+
+#: app_ccf/templates/review.html:23
+msgid "review_people_in_household"
+msgstr "Number of people in your household"
+
+#: app_ccf/templates/review.html:27
+msgid "review_household_income"
+msgstr "Household annual income"
+
+#: app_ccf/templates/review.html:31
+msgid "review_address"
+msgstr "Address"
+
+#: app_ccf/templates/review.html:39
+msgid "review_phone_number"
+msgstr "Phone number"
+
+#: app_ccf/templates/review.html:44
+msgid "review_email"
+msgstr "Email"
+
+#: app_ccf/templates/review.html:62
+msgid "submit_application"
+msgstr "Submit Request"
+
+#: app_ccf/templates/review.html:68
+msgid "review_back"
+msgstr "Back"
+
+#: app_ccf/templates/signature.html:5
+msgid "signature_tos_heading"
+msgstr "Terms and Conditions"
+
+#: app_ccf/templates/signature.html:8
+msgid "signature_paragraph_part1"
+msgstr ""
+"By checking the box below, I affirm that I have read and understood the"
+
+#: app_ccf/templates/signature.html:11
+msgid "signature_tos_link"
+msgstr "https://membership.domesticworkers.org/terms-and-conditions/"
+
+#: app_ccf/templates/signature.html:11
+msgid "signature_terms_and_conditions_carefund"
+msgstr "Terms and Conditions of the Coronavirus Care Fund"
+
+#: app_ccf/templates/signature.html:17
+msgid "signature_agree_tos"
+msgstr "Agree to the Terms and Conditions"
+
+#: app_ccf/templates/signature.html:28
+msgid "signature_please_sign"
+msgstr ""
+"Please sign the below statement by typing your full name into the text box."
+
+#: app_ccf/templates/signature.html:32
+msgid "signature_i"
+msgstr "I,"
+
+#: app_ccf/templates/signature.html:34
+msgid "signature_declare"
+msgstr ""
+"declare under penalty of perjury that the information I have provided on "
+"this form is true and correct."
+
+#: app_ccf/templates/signature.html:40
+msgid "agreement_affirm_text"
+msgstr ""
+"I affirm that I am experiencing financial hardship due to the pandemic and "
+"that assistance from the fund will support me in staying safe in order to "
+"protect myself, my family, and my community."
+
+#: app_ccf/templates/signature.html:42
+msgid "signature_signature_text"
+msgstr "Signature"
+
+#: app_ccf/templates/signature.html:43
+msgid "signature_type_your_name_text"
+msgstr "Type your full name below"
+
+#: app_ccf/templates/unknownerror.html:7
+msgid "unknownerror_heading"
+msgstr "Something went wrong."
+
+#: app_ccf/templates/unknownerror.html:10
+msgid "unknownerror_paragraph1"
+msgstr ""
+"There was an error while loading this step of your application. Please "
+"reload this page."
+
+#: app_ccf/templates/unknownerror.html:13
+#, python-format
+msgid ""
+"\n"
+"If this problem continues, please contact us at "
+"%(customer_service_phone_number)s.\n"
+msgstr ""
+
+#: app_ccf/templates/unknownerror.html:17
+#, python-format
+msgid ""
+"\n"
+"Error code: %(error_code)s\n"
+msgstr ""
+
+#: app_ccf/templates/vouchercode.html:5
+msgid "vouchercode_heading1"
+msgstr "Enter your access code to get started"
+
+#: app_ccf/templates/vouchercode.html:9
+msgid "vouchercode_enetered_code"
+msgstr "We’ve entered in your access code for you."
+
+#: app_ccf/templates/vouchercode.html:13
+msgid "vouchercode_title_text"
+msgstr "Access code"
+
+#: app_ccf/templates/vouchercode.html:14
+msgid "vouchercode_example_text"
+msgstr "abc-def-ghi"
+
+#: app_ccf/templates/vouchercode.html:18
+msgid "vouchercode_no_accesscode"
+msgstr "I do not have an access code"
+
+#: app_ccf/templates/vouchercode.html:21
+msgid "vouchercode_application_note1"
+msgstr ""
+"This code is for your use only and cannot be shared with others. Once you "
+"complete and submit this request form using your code, you will not be able "
+"to use it again."
+
+#: app_ccf/templates/welcome.html:4
+msgid "welcome_heading"
+msgstr "Let's get started"
+
+#: app_ccf/templates/welcome.html:6
+#, python-format
+msgid ""
+"The National Domestic Workers Alliance has launched the Coronavirus Care "
+"Fund (CCF) to provide emergency assistance for qualifying domestic workers "
+"who are experiencing financial hardship due to the coronavirus pandemic. The "
+"fund has raised money from donors to provide $%(payment_amount)s for each "
+"approved applicant. Residents of certain areas may receive more."
+msgstr ""
+
+#: app_ccf/templates/welcome.html:15
+msgid "welcome_paragraph2"
+msgstr "Before you start, a few things you should know:"
+
+#: app_ccf/templates/welcome.html:18
+msgid "welcome_bullet_point1"
+msgstr ""
+"You will need a mailing address, a phone number, and a unique access code to "
+"complete this request form."
+
+#: app_ccf/templates/welcome.html:19
+msgid "welcome_bullet_point2"
+msgstr ""
+"If approved, your prepaid debit card should arrive at your house within 3 "
+"weeks after completing this form."
+
+#: app_ccf/templates/welcome.html:20
+msgid "welcome_bullet_point3"
+msgstr ""
+"The fund is powered by Alia, a non-profit safety net for domestic workers."
+
+#: app_ccf/templates/welcome.html:21
+msgid "welcome_bullet_point4"
+msgstr ""
+"To learn more about eligibility requirements, the funding request process, "
+"where and how you can use funds, or for any other questions, please visit our"
+
+#: app_ccf/text_messages.py:10
+msgid "submission-text"
+msgstr ""
+
+#: app_ccf/text_messages.py:17
+msgid "ndwa-application-submission-text-template-part1"
+msgstr ""
+"Hi {}, your request for funding from the Coronavirus Care Fund has been "
+"received and is being reviewed."
+
+#: app_ccf/text_messages.py:18
+msgid "ndwa-application-submission-text-template-part2"
+msgstr ""
+"If approved, your debit card will be sent to:\n"
+"{}"
+
+#: app_ccf/text_messages.py:19
+msgid "ndwa-application-submission-text-template-part3"
+msgstr ""
+"Please allow 3 weeks for your card to arrive. Please call {} if you need to "
+"change your address or have other questions."
+
+#: app_ccf/text_messages.py:21
+msgid "ndwa-application-submission-text-template-part4"
+msgstr ""
+"This number will be for status notifications only, please do not respond to "
+"this text message or call this number back."
+
+#: app_ccf/text_messages.py:24
+msgid "ndwa-payment-confirmed-text-template-part1"
+msgstr ""
+"Hi, your Coronavirus Care Fund prepaid debit card has been sent. Please wait "
+"3 weeks for the card to arrive."
+
+#: app_ccf/text_messages.py:25
+msgid "ndwa-payment-confirmed-text-template-part2"
+msgstr "If your card doesn't arrive in 3 weeks, give us a call at {}."
+
+#: app_ccf/text_messages.py:29
+msgid "ndwa-application-rejected-text-template-part1"
+msgstr ""
+"Hello {}. Our records show that you have already accessed cash assistance "
+"from the Fund. Workers are only able to apply to the Fund once."
+
+#: app_ccf/text_messages.py:30
+msgid "ndwa-application-rejected-text-template-part2"
+msgstr ""
+"If you think this is wrong and have not applied before, please call us at {}."
+
+#: app_ccf/text_messages.py:38
+#, fuzzy
+#| msgid "ndwa-payment-confirmed-text-template-part1"
+msgid "payment-confirmed-text"
+msgstr ""
+"Hi, your Coronavirus Care Fund prepaid debit card has been sent. Please wait "
+"3 weeks for the card to arrive."
+
+#: app_ccf/text_messages.py:43
+msgid "rejection-text"
+msgstr ""
+
+#: app_ccf/views.py:203
+#, python-brace-format
+msgid ""
+"This access code is invalid. Please check the code and try again. If you're "
+"having trouble, please contact us at {customer_service_phone_number}."
+msgstr ""
+
+#: app_ccf/views.py:376
+msgid "other_application_submission_errors"
+msgstr ""
+"An error occurred while submitting your application. Please contact us at "
+"{}. Sorry for the inconvenience."

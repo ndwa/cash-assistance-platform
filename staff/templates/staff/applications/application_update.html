@@ -1,0 +1,113 @@
+{% extends "base_staff.html" %}
+{% block title %}CCF | Staff | Application {% endblock %}
+{% block sidebar-ccf-application-items %} {{block.super}}
+{% endblock sidebar-ccf-application-items %}
+{% load i18n %}
+
+{% block main %}
+<nav aria-label="breadcrumb" class="h5 pt-3 pb-3">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a
+        href="{% url 'staff:ccf-application-list' %}">Applications</a></li>
+    <li class="breadcrumb-item"><a
+        href="{% url 'staff:application-detail' application.application_id %}">[{{ application.last_name }},
+        {{ application.first_name }}]</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+  </ol>
+</nav>
+<form id="application-update-form" method="post">{% csrf_token %}
+  {{ form.as_p }}
+  <div class=""><input type="submit" id="application-update-btn" value="Update">
+  </div>
+</form>
+
+
+
+<!-- Send rejection text message modal -->
+<div class="modal" id="confirm-rejection-mdl" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content container pl-2 pr-2"
+      style="width: 665px; height: 386px;">
+      <div class="row pl-3">
+        <div class="modal-header" style="font-size: 1.5em;">
+          Update status to rejected
+        </div>
+      </div>
+      <div class="row modal-body pb-0">
+        <div class="col-2 pt-2 text-right">
+          Message to applicant
+        </div>
+        <div class="col-10">
+          <textarea id="rejection-message" readonly class="p-2 text-gray-out"
+            style="width: 100%; height: 50%; color: #212529; resize: none"
+            }>{{ rejection_message }}</textarea>
+          <div>
+            <input id="text-message-checkobox" form="application-update-form"
+              type="checkbox" name="send_rejection_notice" checked>
+            <label>Send notification to applicant</label>
+          </div>
+          <div id="text-message-notice" class="ml-3" style="color:#495057">
+            {% if application.language == 'es' %}
+            This message will be sent to {{ application.first_name }} in
+            Spanish.
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="h-25 row pr-4 pt-4">
+        <div class="col"></div>
+        <div class="col-1.8 mr-2">
+          <button type="button"
+            class="font-weight-normal modal-dialog-button btn btn-outline-secondary btn-block btn-large text-uppercase"
+            data-dismiss="modal">
+            Cancel
+          </button>
+        </div>
+        <div class="col-4.5 pr-2">
+          <button type="button" id="rejection-confirm-btn"
+            class="font-weight-normal modal-dialog-button btn btn-info btn-block btn-large text-uppercase">
+            Update status to rejected
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Bootstrap/jQuery scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
+
+<!-- Button setup scripts -->
+<script>
+  $('#application-update-btn').attr('type', 'button');
+  $('#application-update-btn').click(function () {
+    if ($('#id_status').val() == 'rejected') {
+      // Set up confirmation modal when submit is clicked
+      $('#confirm-rejection-mdl').modal('show');
+      $('#rejection-confirm-btn').click(function () {
+        $('#application-update-form').submit();
+      });
+    } else {
+      $('#application-update-form').submit();
+    }
+  });
+</script>
+
+<script>
+  $('#text-message-checkobox').click(function () {
+    if (this.checked) {
+      $('#text-message-notice').show();
+      $('#rejection-message').css("color", "#212529");
+    } else {
+      $('#text-message-notice').hide();
+      $('#rejection-message').css("color", "#adb5bd");
+    }
+  });
+</script>
+
+{% endblock main %}

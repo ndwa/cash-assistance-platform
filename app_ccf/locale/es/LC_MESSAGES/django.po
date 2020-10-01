@@ -1,0 +1,841 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-29 22:13+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app_ccf/common.py:114 app_ccf/forms.py:44 app_ccf/forms.py:48
+msgid "voucher_input_incorrect_format"
+msgstr ""
+"Código inválido. Los códigos de acceso deben consistir de 9 letras y no "
+"pueden ser utilizados más de una vez."
+
+#: app_ccf/config.py:15
+msgid "ccf_fund_name"
+msgstr "Fondo para Cuidados por el Coronavirus"
+
+#: app_ccf/config.py:18 app_ccf/templates/noqualify.html:17
+#: app_ccf/templates/welcome.html:22
+msgid "ccf_faq_link"
+msgstr "#"
+
+#: app_ccf/config.py:19 app_ccf/templates/noqualify.html:17
+#: app_ccf/templates/welcome.html:22
+msgid "ccf_faq"
+msgstr ""
+"Sección de preguntas frecuentes sobre el Fondo Para Cuidado del Coronavirus"
+
+#: app_ccf/config.py:24
+msgid "requirements_eighteen_or_older"
+msgstr "Ser mayor de 18 años."
+
+#: app_ccf/config.py:25
+msgid "requirements_income_source"
+msgstr ""
+"Antes de la crisis por la pandemia del coronavirus, tu fuente principal de "
+"ingresos provenía de la limpieza de hogares, el cuidado de niñes, o de "
+"adultos mayores o personas con discapacidad en casa."
+
+#: app_ccf/config.py:26
+msgid "requirements_experiencing_hardship"
+msgstr "Estar experimentando dificultades financieras debido a la pandemia."
+
+#: app_ccf/config.py:27
+msgid "requirements_live_in_us"
+msgstr "Vivir en los Estados Unidos."
+
+#: app_ccf/forms.py:30 app_ccf/forms.py:37
+msgid "yes"
+msgstr "Sí"
+
+#: app_ccf/forms.py:30 app_ccf/forms.py:37
+msgid "no"
+msgstr "No"
+
+#: app_ccf/forms.py:92
+#, python-brace-format
+msgid ""
+"At this time, the {fund_name} is only open to applicants that are 18 years "
+"or older."
+msgstr ""
+"En este momento, el {fund_name} solamente está abierto para solicitantes "
+"mayores de 18 años."
+
+#: app_ccf/forms.py:115
+msgid "ethnicity_latina"
+msgstr "Latina/Hispana"
+
+#: app_ccf/forms.py:117
+msgid "ethnicity_black"
+msgstr "Negra/Afroamericana/Afrodescendiente"
+
+#: app_ccf/forms.py:119
+msgid "ethnicity_asian"
+msgstr "Asiática/Isleña del Pacífico"
+
+#: app_ccf/forms.py:121
+msgid "ethnicity_indigenous"
+msgstr "Indígena"
+
+#: app_ccf/forms.py:122
+msgid "ethnicity_white"
+msgstr "Blanca"
+
+#: app_ccf/forms.py:123
+msgid "ethnicity_other"
+msgstr "Otra"
+
+#: app_ccf/forms.py:129
+msgid "gender_female"
+msgstr "Femenino"
+
+#: app_ccf/forms.py:131
+msgid "gender_male"
+msgstr "Masculino"
+
+#: app_ccf/forms.py:133
+msgid "gender_transgender"
+msgstr "Transgénero"
+
+#: app_ccf/forms.py:135
+msgid "gender_nonbinary"
+msgstr "Género no binario / tercer género"
+
+#: app_ccf/forms.py:137
+msgid "gender_other"
+msgstr "Otra"
+
+#: app_ccf/forms.py:156
+msgid "This field is required."
+msgstr ""
+
+#: app_ccf/forms.py:159
+msgid "Ensure this value is greater than or equal to 1."
+msgstr ""
+
+#: app_ccf/forms.py:183
+msgid "select_one"
+msgstr "Seleccione uno"
+
+#: app_ccf/models.py:31
+msgid "17_or_younger"
+msgstr "Menor de 17 años"
+
+#: app_ccf/models.py:32
+msgid "18-29"
+msgstr "18-29"
+
+#: app_ccf/models.py:33
+msgid "30-49"
+msgstr "30-49"
+
+#: app_ccf/models.py:34
+msgid "50-69"
+msgstr "50-69"
+
+#: app_ccf/models.py:35
+msgid "70_or_older"
+msgstr "70 o mayor"
+
+#: app_ccf/models.py:38
+msgid "under_20k"
+msgstr "Menos de $20,000 al año (menos de $385 a la semana)"
+
+#: app_ccf/models.py:40
+msgid "between_20k_39k"
+msgstr "Entre $20,000 y $39,999 al año ($385-$770 a la semana)"
+
+#: app_ccf/models.py:42
+msgid "between_40k_59k"
+msgstr "Entre $40,000 y $59,999 al año ($770-$1155 a la semana)"
+
+#: app_ccf/models.py:44
+msgid "between_60k_79k"
+msgstr "Entre $60,000 y $79,999 al año ($1155-$1540 a la semana)"
+
+#: app_ccf/models.py:45
+msgid "above_80k"
+msgstr "Más de $80,000 al año (más de $1,540 a la semana)"
+
+#: app_ccf/models.py:48
+msgid "Español"
+msgstr ""
+
+#: app_ccf/models.py:49
+msgid "English"
+msgstr ""
+
+#: app_ccf/models.py:161
+msgid "phone_number_incorrect_format"
+msgstr ""
+"El número de teléfono debe de consistir del código de país mas al menos 7 "
+"dígitos."
+
+#: app_ccf/models.py:271
+msgid "voucher_code_invalid_format"
+msgstr "El código de acceso debe de consisitir de 9 caracteres alfanuméricos."
+
+#: app_ccf/templates/address.html:8
+msgid "address_heading1"
+msgstr "Dirección de tu casa"
+
+#: app_ccf/templates/address.html:11
+msgid "address_paragraph1"
+msgstr ""
+"Si tu solicitud es aprobada, recibirás una tarjeta de débito prepagada por "
+"correo. Para esto, debes proporcionar una dirección en los Estados Unidos."
+
+#: app_ccf/templates/address.html:14
+msgid "address_paragraph2"
+msgstr ""
+"Nota: Desafortunadamente, en este momento no podemos enviar tarjetas de "
+"regalo a Puerto Rico."
+
+#: app_ccf/templates/address.html:18
+msgid "address_paragraph3"
+msgstr ""
+"Sugerencia: Busca una carta que te haya llegado a casa y usa la dirección de "
+"correo que encuentres listada para llenar tu dirección aquí abajo."
+
+#: app_ccf/templates/address.html:20
+msgid "address_street_addr"
+msgstr "Dirección de tu casa"
+
+#: app_ccf/templates/address.html:21
+msgid "address_street_addr_example"
+msgstr "45 Broadway St"
+
+#: app_ccf/templates/address.html:23
+msgid "address_apartment"
+msgstr "Apartamento/Oficina/Otra (opcional):"
+
+#: app_ccf/templates/address.html:24
+msgid "address_apartment_example"
+msgstr "Apt 320"
+
+#: app_ccf/templates/address.html:26
+msgid "address_city"
+msgstr "Ciudad"
+
+#: app_ccf/templates/address.html:28
+msgid "address_state"
+msgstr "Estado"
+
+#: app_ccf/templates/address.html:30
+msgid "address_zip_code"
+msgstr "Código postal"
+
+#: app_ccf/templates/address_missing_apt.html:7
+msgid "address_missing_title"
+msgstr ""
+"A tu dirección le falta un número de unidad o contiene un número de unidad "
+
+#: app_ccf/templates/address_missing_apt.html:10
+msgid "address_missing_description1"
+msgstr ""
+"Encontramos la dirección que ingresaste, pero falta el número de unidad o el "
+"número es incorrecto."
+
+#: app_ccf/templates/address_missing_apt.html:13
+msgid "address_missing_description2"
+msgstr "Por favor edita tu dirección para asegurar la entrega."
+
+#: app_ccf/templates/address_missing_apt.html:17
+#: app_ccf/templates/address_unverified.html:14
+msgid "address_entered_address"
+msgstr "Dirección de casa ingresada"
+
+#: app_ccf/templates/address_missing_apt.html:26
+#: app_ccf/templates/address_unverified.html:24
+#: app_ccf/templates/vouchercode.html:23
+#, python-format
+msgid ""
+"\n"
+"Need help? Please call Customer Service at "
+"%(customer_service_phone_number)s.\n"
+msgstr ""
+"\n"
+"¿Necesitas ayuda? Llama a Servicio al Cliente al "
+"%(customer_service_phone_number)s\n"
+
+#: app_ccf/templates/address_missing_apt.html:31
+#: app_ccf/templates/address_unverified.html:30
+#: app_ccf/templates/address_verify.html:63
+msgid "address_edit_address"
+msgstr "Modificar la dirección de casa"
+
+#: app_ccf/templates/address_missing_apt.html:33
+msgid "address_use_anyway"
+msgstr "Utilizar esta dirección"
+
+#: app_ccf/templates/address_unverified.html:7
+msgid "address_unable_to_verify"
+msgstr "No pudimos verificar la dirección de tu casa."
+
+#: app_ccf/templates/address_unverified.html:10
+msgid "address_unable_to_match"
+msgstr ""
+"No encontramos una dirección en los Estados Unidos que corresponda a la que "
+"nos diste. Por favor edita tu dirección para asegurar la entrega."
+
+#: app_ccf/templates/address_verify.html:10
+msgid "address_verification_heading"
+msgstr "Verifiquemos la dirección de tu casa"
+
+#: app_ccf/templates/address_verify.html:13
+msgid "address_modified_address"
+msgstr ""
+"Hemos hecho pequeños cambios a la dirección de casa que nos diste. Si es "
+"correcta, por favor selecciona la dirección sugerida para asegurar la "
+"entrega."
+
+#: app_ccf/templates/address_verify.html:23
+msgid "address_original_address"
+msgstr "Dirección original"
+
+#: app_ccf/templates/address_verify.html:42
+msgid "address_updated_address"
+msgstr "Dirección actualizada"
+
+#: app_ccf/templates/address_verify.html:61
+msgid "address_use_this_address"
+msgstr "Utilizar esta dirección"
+
+#: app_ccf/templates/base_form.html:17
+msgid "form_loading"
+msgstr "Cargando"
+
+#: app_ccf/templates/base_form.html:19
+msgid "form_next"
+msgstr "Avanzar"
+
+#: app_ccf/templates/base_form.html:25
+msgid "form_back"
+msgstr "Regresar"
+
+#: app_ccf/templates/confirmation.html:5
+msgid "confirmation_application_approved"
+msgstr "¡Has enviado tu solicitud exitosamente!"
+
+#: app_ccf/templates/confirmation.html:8
+msgid "confirmation_paragraph1"
+msgstr "Tu solicitud se ha enviado de manera exitosa."
+
+#: app_ccf/templates/confirmation.html:13
+msgid "confirmation_bulletpoint_1"
+msgstr "Recibirás tu tarjeta de débito prepagada por correo en 3 semanas."
+
+#: app_ccf/templates/confirmation.html:16
+#, python-format
+msgid ""
+"You will receive a text notification when we have sent your card out. If you "
+"have questions about your card, please call us at <b>"
+"%(customer_service_phone_number)s</b>."
+msgstr ""
+"Recibirás un mensaje de texto cuando enviemos tu tarjeta. Si tienes alguna "
+"pregunta sobre tu tarjeta, por favor llámanos al <b>"
+"%(customer_service_phone_number)s</b>."
+
+#: app_ccf/templates/confirmation.html:22
+msgid "confirmation_bulletpoint_3"
+msgstr ""
+"Visita la <a target=\"_blank\" class=\"text-primary\" href=\"https://help."
+"ccf.myalia.org/es/collections/2426131-coronavirus-care-fund-faq\"> sección "
+"de preguntas frecuentes</a> para hallar más información sobre el fondo, "
+"incluyendo cuándo y cómo puedes utilizar tu tarjeta, y encontrar otros "
+"recursos de ayuda para las trabajadoras del hogar durante la pandemia."
+
+#: app_ccf/templates/confirmation.html:27
+msgid "confirmation_paragraph2"
+msgstr ""
+"Nuestra misión en la Alianza Nacional de Trabajadoras del Hogar es apoyar a "
+"las trabajadoras del hogar para que vivan y trabajen con dignidad. Esperamos "
+"que esta tarjeta te ayude a enfrentar la crisis por el coronavirus y que "
+"juntas podamos obtener la seguridad y protección que todas merecemos. "
+"¡Estamos atentas a ustedes, las apoyamos y las apreciamos!"
+
+#: app_ccf/templates/confirmation.html:30
+msgid "confirmation_paragraph3"
+msgstr ""
+"<a class=\"text-primary\" href=\"https://help.ccf.myalia.org/es/"
+"collections/2426131-coronavirus-care-fund-faq\">Visita la sección de "
+"preguntas frecuentes</a>."
+
+#: app_ccf/templates/contact.html:5
+msgid "contact_heading1"
+msgstr "Información de contacto"
+
+#: app_ccf/templates/contact.html:7
+msgid "contact_phone_number"
+msgstr "Número telefónico"
+
+#: app_ccf/templates/contact.html:8
+msgid "contact_phone_number_example"
+msgstr "555-555-5555"
+
+#: app_ccf/templates/contact.html:10
+msgid "contact_email_example"
+msgstr "lgarcia@sitioweb.com"
+
+#: app_ccf/templates/contact.html:11
+msgid "contact_email"
+msgstr "Correo electrónico (opcional)"
+
+#: app_ccf/templates/contact.html:14
+msgid "contact_no_email_alert"
+msgstr ""
+"No te preocupes si no tienes una dirección de correo electrónico, podemos "
+"contactarte a través de mensajes de texto o llamadas telefónicas."
+
+#: app_ccf/templates/contact.html:18
+msgid "contact_paragraph1"
+msgstr ""
+"Al proporcionar tu número de teléfono celular, aceptas recibir mensajes de "
+"texto ocasionales de parte de Alia y de La Alianza. Pueden aplicar tarifas "
+"por datos y mensajes de texto. Puedes optar por no recibir más mensajes en "
+"cualquier momento enviando el mensaje de texto STOP."
+
+#: app_ccf/templates/disclosure.html:5
+msgid "disclosure_heading"
+msgstr "Apoyo continuo proveído por Alia"
+
+#: app_ccf/templates/disclosure.html:7
+msgid "disclosure_paragraph2"
+msgstr ""
+"La Alianza ha creado Alia para brindar beneficios a trabajadoras del hogar "
+"como tú. Con Alia, puedes acceder a beneficios como tiempo libre pagado y un "
+"seguro de vida que se mantiene contigo sin importar quién sea tu empleador."
+
+#: app_ccf/templates/disclosure.html:10
+msgid "disclosure_paragraph1"
+msgstr ""
+"Las solicitudes y pagos del Fondo para Cuidados por el Coronavirus son "
+"administrados por Alia. Al ingresar tu información en este formulario de "
+"solicitud, aceptas los <a class=\"text-primary\" href=\"https://limpiadorx."
+"myalia.org/terminos-y-condiciones\" target=\"_blank\"> Términos de Uso </a> "
+"y las <a class=\"text-primary\" href=\"https://limpiadorx.myalia.org/"
+"politica-de-privacidad\" target=\"_blank\"> Políticas de Privacidad </a> de "
+"Alia y nos autorizas a crear una cuenta de Alia en tu nombre."
+
+#: app_ccf/templates/disclosure.html:13
+msgid "disclosure_paragraph3"
+msgstr ""
+"Porfavor ingrese a <a class=\"text-primary\" href=\"http://myalia.org\" "
+"target=\"_blank\">myalia.org</a> para más información."
+
+#: app_ccf/templates/household.html:5
+msgid "household_heading1"
+msgstr "Información adicional"
+
+#: app_ccf/templates/household.html:8
+msgid "household_paragraph1"
+msgstr ""
+"Por favor comparte la siguiente información sobre tu hogar para ayudarnos a "
+"entender mejor quién está accediendo al Fondo.. Tu respuesta <b> no </b> "
+"afectará tu elegibilidad ni la cantidad de asistencia que recibirás."
+
+#: app_ccf/templates/household.html:12
+msgid "houshold_question_size"
+msgstr "¿Cuántas personas viven en tu hogar?"
+
+#: app_ccf/templates/household.html:16
+msgid "household_question_income"
+msgstr ""
+"¿Cuál era el ingreso regular de tu hogar antes de la crisis del coronavirus?"
+
+#: app_ccf/templates/household.html:19
+msgid "profile_ethnicity_question"
+msgstr "¿Cuál es tu raza o etnia? - Opcional"
+
+#: app_ccf/templates/household.html:25
+msgid "household_gender_question"
+msgstr "¿Cuál es tu género? - Opcional"
+
+#: app_ccf/templates/noqualify.html:10
+msgid "noqualify_heading1"
+msgstr "Lo sentimos, no calificas en este momento."
+
+#: app_ccf/templates/noqualify.html:13
+msgid "noqualify_paragraph_unfortunately"
+msgstr ""
+"Lamentablemente, no calificas para recibir ayuda del Fondo Para Cuidado del "
+"Coronavirus, que provee ayuda de emergencia a las trabajadoras del hogar que "
+"tengan 18 o más años de edad."
+
+#: app_ccf/templates/noqualify.html:16
+msgid "noqualify_paragraph1"
+msgstr "Para conocer más sobre los requisitos de elegibilidad, visita nuestra "
+
+#: app_ccf/templates/novouchercode.html:10
+msgid "novouchercode_heading"
+msgstr ""
+"Lo sentimos, en este momento solamente estamos recibiendo solicitudes con "
+"códigos de acceso"
+
+#: app_ccf/templates/novouchercode.html:13
+msgid "novouchercode_paragraph1"
+msgstr ""
+"Para aprender más sobre cómo conseguir un código de acceso, visita nuestra "
+
+#: app_ccf/templates/profile.html:5
+msgid "disclosure_vouchercode_success"
+msgstr ""
+"¡Hemos verificado tu código de acceso! Para asegurarnos de que tu solicitud "
+"esté completa, por favor llena todos los pasos de este formulario hasta que "
+"llegues a la página titulada: “¡Has enviado tu solicitud exitosamente!”."
+
+#: app_ccf/templates/profile.html:8
+msgid "profile_heading1"
+msgstr "Información de perfil"
+
+#: app_ccf/templates/profile.html:10
+msgid "profile_first_name"
+msgstr "Nombre"
+
+#: app_ccf/templates/profile.html:12
+msgid "profile_last_name"
+msgstr "Apellido"
+
+#: app_ccf/templates/profile.html:14
+msgid "profile_question_age"
+msgstr "¿Cuántos años tienes?"
+
+#: app_ccf/templates/profile.html:16
+msgid "profile_question_work"
+msgstr "¿Qué tipo de trabajo del hogar desempeñas?"
+
+#: app_ccf/templates/profile.html:18
+msgid "profile_paragraph_work"
+msgstr ""
+"Si desempeñas diferentes tipos de trabajo, por favor elige la opción en la "
+"que dedicas más tiempo."
+
+#: app_ccf/templates/requirements.html:5
+msgid "requirements_header1"
+msgstr "Verifica si calificas"
+
+#: app_ccf/templates/requirements.html:8
+#, python-format
+msgid ""
+"\n"
+"To qualify for the %(fund_name)s, you must meet the following criteria:\n"
+msgstr ""
+"\n"
+"Debes cumplir con los siguientes requisitos para calificar al "
+"%(fund_name)s:\n"
+
+#: app_ccf/templates/requirements.html:28
+msgid "requirements_learn_more"
+msgstr ""
+"Para conocer más sobre estos requisitos, visita nuestra <a target=\"_blank\" "
+"class=\"text-primary\" href=\"https://help.ccf.myalia.org/es/"
+"collections/2426131-coronavirus-care-fund-faq\">sección de preguntas "
+"frecuentes.</a>"
+
+#: app_ccf/templates/requirements.html:31
+msgid "requirements_question"
+msgstr "¿Cumples con estos requisitos?"
+
+#: app_ccf/templates/review.html:5
+msgid "review_heading1"
+msgstr "Revisa tu solicitud"
+
+#: app_ccf/templates/review.html:12
+msgid "review_paragraph1"
+msgstr ""
+"¡Ya casi terminas! Antes de enviar tu solicitud, asegúrate de que tu "
+"información esté correcta."
+
+#: app_ccf/templates/review.html:15
+msgid "review_name"
+msgstr "Nombre:"
+
+#: app_ccf/templates/review.html:19
+msgid "review_type_of_work"
+msgstr "Trabajo del hogar"
+
+#: app_ccf/templates/review.html:23
+msgid "review_people_in_household"
+msgstr "Número de personas en tu hogar"
+
+#: app_ccf/templates/review.html:27
+msgid "review_household_income"
+msgstr "Ingresos anuales del hogar"
+
+#: app_ccf/templates/review.html:31
+msgid "review_address"
+msgstr "Dirección de correo"
+
+#: app_ccf/templates/review.html:39
+msgid "review_phone_number"
+msgstr "Número telefónico"
+
+#: app_ccf/templates/review.html:44
+msgid "review_email"
+msgstr "Correo electrónico"
+
+#: app_ccf/templates/review.html:62
+msgid "submit_application"
+msgstr "Enviar solicitud"
+
+#: app_ccf/templates/review.html:68
+msgid "review_back"
+msgstr "Regresar"
+
+#: app_ccf/templates/signature.html:5
+msgid "signature_tos_heading"
+msgstr "Términos y Condiciones"
+
+#: app_ccf/templates/signature.html:8
+msgid "signature_paragraph_part1"
+msgstr ""
+"Al seleccionar la casilla a continuación, declaro que he leído y comprendo "
+"los"
+
+#: app_ccf/templates/signature.html:11
+msgid "signature_tos_link"
+msgstr "\"https://limpiadorx.myalia.org/terminos-y-condiciones\""
+
+#: app_ccf/templates/signature.html:11
+msgid "signature_terms_and_conditions_carefund"
+msgstr "Términos y Condiciones del Fondo para Cuidados por el Coronavirus"
+
+#: app_ccf/templates/signature.html:17
+msgid "signature_agree_tos"
+msgstr "Acepto los Términos y Condiciones"
+
+#: app_ccf/templates/signature.html:28
+msgid "signature_please_sign"
+msgstr ""
+"Firma la siguiente declaración escribiendo tu nombre completo en el campo de "
+"texto."
+
+#: app_ccf/templates/signature.html:32
+msgid "signature_i"
+msgstr "Yo,"
+
+#: app_ccf/templates/signature.html:34
+msgid "signature_declare"
+msgstr ""
+"declaro bajo pena de perjurio que la información que he proporcionado en "
+"este formulario es verdadera y correcta."
+
+#: app_ccf/templates/signature.html:40
+msgid "agreement_affirm_text"
+msgstr ""
+"Declaro que estoy experimentando dificultades económicas debido a la "
+"pandemia y que la asistencia del Fondo me ayudará a protegerme y quedarme en "
+"casa, con el fin de protegerme a mí, a mi familia y a mi comunidad."
+
+#: app_ccf/templates/signature.html:42
+msgid "signature_signature_text"
+msgstr "Firma"
+
+#: app_ccf/templates/signature.html:43
+msgid "signature_type_your_name_text"
+msgstr "Escribe tu nombre completo a continuación"
+
+#: app_ccf/templates/unknownerror.html:7
+msgid "unknownerror_heading"
+msgstr "Hubo un error."
+
+#: app_ccf/templates/unknownerror.html:10
+msgid "unknownerror_paragraph1"
+msgstr ""
+"Hubo un  error al procesar este paso de tu solicitud. Por favor vuelve a "
+"cargar la página."
+
+# python-format
+#: app_ccf/templates/unknownerror.html:13
+#, python-format
+msgid ""
+"\n"
+"If this problem continues, please contact us at "
+"%(customer_service_phone_number)s.\n"
+msgstr ""
+"\n"
+"Si sigues teniendo problemas, contáctanos al "
+"%(customer_service_phone_number)s\n"
+
+#: app_ccf/templates/unknownerror.html:17
+#, python-format
+msgid ""
+"\n"
+"Error code: %(error_code)s\n"
+msgstr ""
+"\n"
+"Código de error: %(error_code)s\n"
+
+#: app_ccf/templates/vouchercode.html:5
+msgid "vouchercode_heading1"
+msgstr "Para iniciar, ingresa tu código de acceso."
+
+#: app_ccf/templates/vouchercode.html:9
+msgid "vouchercode_enetered_code"
+msgstr "Hemos ingresado el código de accesso por tí."
+
+#: app_ccf/templates/vouchercode.html:13
+msgid "vouchercode_title_text"
+msgstr "Código de acceso"
+
+#: app_ccf/templates/vouchercode.html:14
+msgid "vouchercode_example_text"
+msgstr "abc-def-ghi"
+
+#: app_ccf/templates/vouchercode.html:18
+msgid "vouchercode_no_accesscode"
+msgstr "No tengo un código de acceso"
+
+#: app_ccf/templates/vouchercode.html:21
+msgid "vouchercode_application_note1"
+msgstr ""
+"Este código es sólo para tu uso y <b>no se puede compartir con otros</b>. "
+"Una vez que completes y envíes este formulario de solicitud con tu código, "
+"no podrás volver a utilizarlo."
+
+#: app_ccf/templates/welcome.html:4
+msgid "welcome_heading"
+msgstr "Comencemos"
+
+#: app_ccf/templates/welcome.html:6
+#, python-format
+msgid ""
+"The National Domestic Workers Alliance has launched the Coronavirus Care "
+"Fund (CCF) to provide emergency assistance for qualifying domestic workers "
+"who are experiencing financial hardship due to the coronavirus pandemic. The "
+"fund has raised money from donors to provide $%(payment_amount)s for each "
+"approved applicant. Residents of certain areas may receive more."
+msgstr ""
+"La Alianza Nacional de Trabajadoras del Hogar ha lanzado el Fondo Para "
+"Cuidados del Coronavirus (El Fondo) para brindar ayuda de emergencia a las "
+"trabajadoras del hogar que estén experimentando dificultades económicas "
+"debido a la pandemia del coronavirus. El Fondo ha recaudado dinero de "
+"donantes para ofrecer $%(payment_amount)s a cada solicitante que haya sido "
+"aprobada. Algunas residentes en áreas determinadas podrían recibir una "
+"cantidad mayor."
+
+#: app_ccf/templates/welcome.html:15
+msgid "welcome_paragraph2"
+msgstr ""
+"Antes de que inicies tu solicitud, hay un par de cosas que debes saber:"
+
+#: app_ccf/templates/welcome.html:18
+msgid "welcome_bullet_point1"
+msgstr ""
+"Necesitarás una dirección postal, un número de teléfono y un código único "
+"para llenar esta solicitud."
+
+#: app_ccf/templates/welcome.html:19
+msgid "welcome_bullet_point2"
+msgstr ""
+"Si se aprueba tu solicitud, tu tarjeta de débito prepagada llegará a tu casa "
+"dentro de 3 semanas después de completar este formulario."
+
+#: app_ccf/templates/welcome.html:20
+msgid "welcome_bullet_point3"
+msgstr ""
+"El fondo está impulsado por Alia, una entidad sin fines de lucro que ofrece "
+"beneficios para trabajadoras del hogar como tiempo libre pagado y seguro de "
+"vida."
+
+#: app_ccf/templates/welcome.html:21
+msgid "welcome_bullet_point4"
+msgstr ""
+"Si quieres aprender más sobre los requisitos de elegibilidad, el proceso de "
+"solicitud, dónde y cómo puedes utilizar los fondos, o para cualquier otra "
+"pregunta, visita nuestra "
+
+#: app_ccf/text_messages.py:10
+msgid "submission-text"
+msgstr ""
+
+#: app_ccf/text_messages.py:17
+msgid "ndwa-application-submission-text-template-part1"
+msgstr ""
+"Hola, tu solicitud para el {} ha sido recibida y está siendo evaluada. Si tu "
+"solicitud es aprobada, tu tarjeta débito será enviada a:\n"
+"{}.\n"
+"Favor de esperar 3 semanas para que llegue tu tarjeta. Llama al {} para un "
+"cambio de dirección o para preguntas. Este número es solo para "
+"notificaciones de estado, por favor no respondas a este mensaje ni llames a "
+"este número."
+
+#: app_ccf/text_messages.py:18
+msgid "ndwa-application-submission-text-template-part2"
+msgstr ""
+"Hola, tu tarjeta de débito prepagada ha sido enviada. Si tu tarjeta no llega "
+"en 3 semanas, llámanos al {}."
+
+#: app_ccf/text_messages.py:19
+msgid "ndwa-application-submission-text-template-part3"
+msgstr ""
+"Favor de esperar 3 semanas para que llegue tu tarjeta. Llama al {} para un "
+"cambio de dirección o para preguntas."
+
+#: app_ccf/text_messages.py:21
+msgid "ndwa-application-submission-text-template-part4"
+msgstr ""
+"Este número es solo para notificaciones de estado, por favor no respondas a "
+"este mensaje ni llames a este número."
+
+#: app_ccf/text_messages.py:24
+msgid "ndwa-payment-confirmed-text-template-part1"
+msgstr ""
+"Hola, tu tarjeta débito pre pagada del CCF ha sido enviada. Por favor espera "
+"3 semanas para que llegue la tarjeta."
+
+#: app_ccf/text_messages.py:25
+msgid "ndwa-payment-confirmed-text-template-part2"
+msgstr "Si tu tarjeta no llega en 3 semanas, llámanos al {}."
+
+#: app_ccf/text_messages.py:29
+msgid "ndwa-application-rejected-text-template-part1"
+msgstr ""
+"Hola {}. Nuestros registros muestran que ya has recibido ayuda monetaria a "
+"través del Fondo."
+
+#: app_ccf/text_messages.py:30
+msgid "ndwa-application-rejected-text-template-part2"
+msgstr ""
+"Las trabajadoras solo pueden aplicar al Fondo una vez. Si piensas que este "
+"mensaje es incorrecto y no has aplicado antes, por favor llámanos al {}."
+
+#: app_ccf/text_messages.py:38
+#, fuzzy
+#| msgid "ndwa-payment-confirmed-text-template-part1"
+msgid "payment-confirmed-text"
+msgstr ""
+"Hola, tu tarjeta débito pre pagada del CCF ha sido enviada. Por favor espera "
+"3 semanas para que llegue la tarjeta."
+
+#: app_ccf/text_messages.py:43
+msgid "rejection-text"
+msgstr ""
+
+#: app_ccf/views.py:203
+#, python-brace-format
+msgid ""
+"This access code is invalid. Please check the code and try again. If you're "
+"having trouble, please contact us at {customer_service_phone_number}."
+msgstr ""
+"Este código de acceso es inválido. Revisa el código e intenta de nuevo. Si "
+"tienes dificultades, contáctanos al {customer_service_phone_number}."
+
+#: app_ccf/views.py:376
+msgid "other_application_submission_errors"
+msgstr ""
+"Hubo un error al enviar tu solicitud. Por favor contáctanos al {}. Perdona "
+"la molestia."

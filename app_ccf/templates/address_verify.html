@@ -1,0 +1,85 @@
+{% extends "base_ccf.html" %}
+{% load i18n %}
+{% block content %}
+<div class="row text-left">
+    <div class="col">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <h4 class="text-left">
+                {% trans "address_verification_heading" %}
+            </h4>
+            <p>
+                {% trans "address_modified_address" %}
+            </p>
+            {% with form_field=form.usps_standardized %}
+            <div class="address-verify-choice form-group">
+                <div id="original-address-selection" onclick="setOriginalAddressStyle()"
+                    class="alert pl-5 custom-control custom-radio py-3">
+                    <div onclick="setOriginalAddressStyle()" class="d-inline-block">
+                        <input id="id_original_address" name="{{form_field.name}}" type="radio" value="False"
+                            class="custom-control-input" />
+                        <label for="id_original_address" class="custom-control-label">
+                            <b> {% trans "address_original_address" %}</b>
+                            <br />
+                            <br />
+                            <span class="py-1">
+                                {% with application=application_model %}
+                                {{ application.addr1 }} <br />
+                                {% if application.addr2 %} {{ application.addr2 }} <br /> {% endif %}
+                                {{ application.city }}, {{ application.state }} {{ application.zip_code }}
+                                {% endwith %}
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div id="updated-address-selection" onclick="setUpdatedAddressStyle()"
+                    class="custom-control alert alert-secondary pl-5 custom-radio py-3">
+                    <div onclick="setUpdatedAddressStyle()" class="d-inline-block">
+                        <input id="id_updated_address" name="{{form_field.name}}" type="radio" value="True"
+                            checked="checked" class="custom-control-input" />
+                        <label for="id_updated_address" class="custom-control-label">
+                            <b> {% trans "address_updated_address" %}</b>
+                            <br />
+                            <br />
+                            <span class="py-1">
+                                {{ verified_addr_1 }} <br />
+                                {% if verified_addr_2 %} {{ verified_addr_2 }} <br /> {% endif %}
+                                {{ verified_city }}, {{ verified_state }} {{ verified_zip_code }}
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            {% if form_field.errors %}
+            <div class="alert alert-danger error-list my-3 mx-2 px-3 py-3" role="alert">
+                {{ form_field.errors }}
+            </div>
+            {% endif %}
+            {% endwith %}
+            <input class="btn btn-primary btn-lg btn-block text-uppercase" type="submit" onclick="this.form.submit();"
+                value="{% trans 'address_use_this_address' %}">
+            <a href="{% url previous_url %}"
+                class="btn btn-light btn-lg btn-block text-uppercase">{% trans 'address_edit_address' %}</a>
+        </form>
+    </div>
+</div>
+<script>
+    updatedAddress = document.getElementById('updated-address-selection');
+    originalAddress = document.getElementById('original-address-selection');
+    noSelectClassName = "alert custom-control pl-5 custom-radio py-3";
+    selectClassName = "alert alert-secondary custom-control pl-5 custom-radio py-3";
+
+    function setUpdatedAddressStyle() {
+        updatedAddress.className = selectClassName;
+        originalAddress.className = noSelectClassName;
+        document.getElementById('id_updated_address').checked = true;
+    }
+
+    function setOriginalAddressStyle() {
+        updatedAddress.className = noSelectClassName;
+        originalAddress.className = selectClassName;
+        document.getElementById('id_original_address').checked = true;
+    }
+</script>
+{% endblock %}

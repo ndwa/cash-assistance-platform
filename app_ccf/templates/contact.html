@@ -1,0 +1,30 @@
+{% extends "base_form.html" %}
+{% load i18n %}
+{% block formcontent %}
+<h4>
+    {% trans "contact_heading1" %}
+</h4>
+{% trans "contact_phone_number" as phone_number_title_text %}
+{% trans "contact_phone_number_example" as phone_number_example_text %}
+{% include "text_input_form.html" with extra_form_field_class="px-0" extra_styles="max-width: 164px;" form_field=form.phone_digits title_text=phone_number_title_text example_text=phone_number_example_text%}
+{% trans "contact_email_example" as email_example_text %}
+{% trans "contact_email" as email_title_text %}
+{% include "text_input_form.html" with extra_form_field_class="px-0" extra_styles="max-width: 328px;" form_field=form.email title_text=email_title_text example_text=email_example_text %}
+<div class="alert alert-info" role="alert">
+    {% trans "contact_no_email_alert" %}
+</div>
+
+<p>
+    {% trans "contact_paragraph1" %}
+</p>
+{% endblock %}
+{% block extra_body_scripts %}
+<script>
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        return (charCode == 45) || // dash
+            (charCode > 39 && charCode < 42) || // parenthesis
+            (charCode > 47 && charCode < 58); // numbers
+    }
+</script>
+{% endblock extra_body_scripts %}

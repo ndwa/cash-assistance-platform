@@ -1,0 +1,22 @@
+{% load i18n %}
+<div class="form-group">
+    {% if title_text %}
+    <label for="{{ form_field.id_for_label }}"><b>{{ title_text }}</b></label>
+    {% endif %}
+    {% if example_text %}
+    <br/>
+    <span class="text-secondary">{% trans "example" %} {{ example_text }}</span>
+    {% endif %}
+    {% if caption_text %}
+    <br/>
+    <span class="text-secondary"> {{ caption_text }}</span>
+    {% endif %}
+    <div class="form-field-input {{extra_form_field_class}}" {% if extra_styles %}style="{{extra_styles}}"{% endif %}>
+        {{ form_field }}
+    </div>
+</div>
+{% if form_field.errors %}
+<div class="alert alert-danger error-list mb-3 mt-3 ml-2 mr-2 pl-3 pr-3 pt-3 pb-3" role="alert">
+    {{ form_field.errors }}
+</div>
+{% endif %}

@@ -1,0 +1,25 @@
+{% extends "base_form.html" %}
+{% load i18n %}
+{% block formcontent %}
+<h4>{% trans "welcome_heading" %}</h4>
+<p>
+    {% blocktrans trimmed with payment_amount=payment_amount %}
+    The National Domestic Workers Alliance has launched the Coronavirus Care
+    Fund (CCF) to provide emergency assistance for qualifying domestic workers
+    who are experiencing financial hardship due to the coronavirus pandemic. The
+    fund has raised money from donors to provide ${{ payment_amount }} for each
+    approved applicant. Residents of certain areas may receive more.
+    {% endblocktrans %}
+</p>
+<p>
+    {% trans "welcome_paragraph2" %}
+</p>
+<ul>
+    <li>{% trans "welcome_bullet_point1" %}</li>
+    <li>{% trans "welcome_bullet_point2" %}</li>
+    <li>{% trans "welcome_bullet_point3" %}</li>
+    <li>{% trans "welcome_bullet_point4" %}
+        <a class="text-primary" target="_blank" href="{% trans 'ccf_faq_link' %}">{% trans "ccf_faq" %}</a>.
+    </li>
+</ul>
+{% endblock %}

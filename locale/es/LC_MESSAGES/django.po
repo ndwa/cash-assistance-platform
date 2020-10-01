@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-29 22:13+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ccf/settings.py:267
+msgid "English"
+msgstr ""
+
+#: ccf/settings.py:268
+msgid "Spanish"
+msgstr ""
+
+#: shared/common.py:7
+msgid "house_cleaning"
+msgstr "Limpieza de casas"
+
+#: shared/common.py:8
+msgid "nanny"
+msgstr "Trabajo de niñera"
+
+#: shared/common.py:10
+msgid "home_care"
+msgstr "Cuidado en el hogar para adultos mayores o personas con discapacidades"
+
+#: shared/common.py:11
+msgid "none_of_the_above"
+msgstr "Ninguno de los anteriores"
+
+#: shared/common.py:14
+msgid "Yes"
+msgstr ""
+
+#: shared/common.py:14
+msgid "No"
+msgstr ""
+
+#: shared/common.py:20 shared/common.py:32
+msgid "This field is required."
+msgstr "Este campo es requerido."
+
+#: shared/common.py:23
+msgid ""
+"At this time, the Coronavirus Care Fund is only open to applicants who work "
+"in house cleaning, childcare, care for elders, or care for people with "
+"disabilities."
+msgstr ""
+"En este momento, el Fondo para Cuidados por el Coronavirus solamente está "
+"abierto para solicitantes que trabajen en uno de los campos mencionados en "
+"la lista."
+
+#: shared/utils.py:30
+msgid "phone_number_incorrect_format"
+msgstr ""
+"El número de teléfono debe de consistir del código de país mas al menos 7 "
+"dígitos."
+
+#: shared/utils.py:35
+msgid "no_special_characters_allowed"
+msgstr "No se permiten caracteres especiales en este campo."
+
+#: shared/utils.py:40
+msgid "street_address_incorrect_format"
+msgstr ""
+"Las direcciones de correo no pueden contener arrobas, signos de "
+"interrogación o dos puntos."
+
+#: shared/utils.py:45
+msgid "zip_code_incorrect_format"
+msgstr "Los códigos postales deben de consistir de 5 dígitos."
+
+#: shared/utils.py:57 shared/utils.py:63
+msgid "needs_phone_number_format"
+msgstr ""
+"El número de teléfono debe de consistir del código de país mas al menos 7 "
+"dígitos."
+
+#: templates/base_ccf.html:40
+msgid "heading_coronavirus"
+msgstr "Fondo para Cuidados"
+
+#: templates/base_ccf.html:41
+msgid "heading_care_fund"
+msgstr "Por el Coronavirus"
+
+#: templates/base_ccf.html:56
+msgid "of"
+msgstr "de"
+
+#: templates/base_ccf.html:71
+msgid "copyright_footer"
+msgstr ""
+"<b>Derechos de autor La Alianza Nacional de Trabajadoras del Hogar &copy; "
+"2020</b>, una organización sin fines de lucro cuya misión es apoyar a las "
+"trabajadoras del hogar para que vivan y trabajen con dignidad."
+
+#: templates/base_ccf.html:77
+msgid "copyright_footer_learn_more"
+msgstr ""
+"Aprende más sobre nuestra <a class=\"privacy-policy-link\" target=\"_blank\" "
+"href=\"https://www.domesticworkers.org/privacy-policy-spanish\"> Política de "
+"privacidad.</a>"
+
+#: templates/text_input_form.html:8
+msgid "example"
+msgstr "Ejemplo:"

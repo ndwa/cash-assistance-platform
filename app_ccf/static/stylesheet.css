@@ -1,0 +1,304 @@
+a,
+a:hover {
+    color: #05a8aa;
+}
+
+b {
+    font-weight: 500;
+}
+
+body {
+    background: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.4em;
+}
+
+footer a {
+    color: #343a40;
+    text-decoration: underline;
+}
+
+footer a.fa {
+    color: #343a40;
+    text-decoration: none;
+}
+
+footer a.fa:hover {
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #6c757d;
+}
+
+h1 {
+    font-size: 1em;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+h4 {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+p.meta {
+    color: #6c757d;
+    font-size: .875em;
+}
+
+strong {
+    font-weight: 800;
+}
+
+#id_voucher_input {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.care-fund {
+    color: #fd7e14;
+    display: block;
+    font-size: 1.65em;
+    font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.ccf-myalia-org {
+    color: #212529;
+}
+
+.container-fluid {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.coronavirus {
+    color: #05a8aa;
+    display: block;
+    font-size: 1.3em;
+    font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.error-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.es .care-fund {
+    font-size: 1em;
+}
+
+.es .coronavirus {
+    font-size: 1em;
+}
+
+.es .ndwa-logo {
+    width: 80px;
+}
+
+.form-field-input input {
+    width: 100%;
+}
+
+.form-field-input label {
+    display: inline !important;
+}
+
+.form-field-input label input {
+    width: auto;
+}
+
+.form-field-input li {
+    padding: 16px 0;
+}
+
+.form-field-input ul {
+    list-style: none;
+    padding: 0;
+}
+
+.voucher-code-input-form {
+    color: #343a40;
+}
+
+.voucher-code-input-form input {
+    text-transform: lowercase;
+}
+
+/* Sticky footer */
+/* https://css-tricks.com/couple-takes-sticky-footer/#article-header-id-0 */
+
+.main {
+    min-height: 100%;
+    margin-bottom: -200px;
+}
+
+.footer,
+.push {
+    height: 200px;
+}
+
+.footer {
+    width: 100%;
+    background: #e9ecef;
+}
+
+/* Customization of bootstrap components */
+
+.bg-primary {
+    background-color: #05a8aa !important;
+}
+
+.border-primary {
+    border-color: #05a8aa !important;
+}
+
+.btn {
+    font-weight: 500;
+}
+
+.btn-light,
+.btn-light:hover,
+.btn-light:focus,
+.btn-light:active,
+.btn-light:active:focus {
+    background: #fff !important;
+    border: #6c757d solid !important;
+    color: #6c757d !important;
+}
+
+.btn-outline-primary {
+    border-color: #05a8aa;
+    color: #05a8aa;
+}
+
+.btn-outline-primary.disabled,
+.btn-outline-primary:disabled {
+    background-color: transparent;
+    color: #05a8aa;
+}
+
+.btn-outline-primary:focus,
+.btn-outline-primary.focus {
+    box-shadow: 0 0 0 .2rem rgba(5, 168, 170, 0.5);
+}
+
+.btn-outline-primary:hover {
+    background-color: #05a8aa;
+    border-color: #05a8aa;
+    color: #fff;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.show>.btn-outline-primary.dropdown-toggle {
+    background-color: #05a8aa;
+    border-color: #05a8aa;
+    color: #fff;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.show>.btn-outline-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .2rem rgba(5, 168, 170, 0.5);
+}
+
+.btn-primary {
+    background-color: #05a8aa;
+    border-color: #05a8aa;
+    color: #fff;
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+    background-color: #05a8aa;
+    border-color: #05a8aa;
+    color: #fff;
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+    background-color: #048385;
+    border-color: #047778;
+    box-shadow: 0 0 0 .2rem rgba(43, 181, 183, 0.5);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #048385;
+    border-color: #047778;
+    color: #fff;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show>.btn-primary.dropdown-toggle {
+    background-color: #047778;
+    border-color: #036b6c;
+    color: #fff;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .2rem rgba(43, 181, 183, 0.5);
+}
+
+.text-primary {
+    color: #05a8aa !important;
+}
+
+a.badge-primary:focus,
+a.badge-primary.focus {
+    box-shadow: 0 0 0 .2rem rgba(5, 168, 170, 0.5);
+    outline: 0;
+}
+
+a.badge-primary:hover,
+a.badge-primary:focus {
+    background-color: #047778;
+    color: #fff;
+}
+
+a.bg-primary:hover,
+a.bg-primary:focus,
+button.bg-primary:hover,
+button.bg-primary:focus {
+    background-color: #047778 !important;
+}
+
+a.text-primary:hover,
+a.text-primary:focus {
+    color: #035f60 !important;
+}
+
+/* Bootstrap component override*/
+
+.btn-orange {
+    background-color: #fd7e14;
+    border-color: transparent !important;
+}
+
+.btn-orange:active,
+.btn-orange:focus {
+    background-color: #dc6502 !important;
+    border-color: transparent !important;
+}
+
+.btn-orange:hover {
+    background-color: #dc6502 !important;
+    border-color: transparent !important;
+}

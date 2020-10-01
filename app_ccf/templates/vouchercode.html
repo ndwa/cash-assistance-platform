@@ -1,0 +1,39 @@
+{% extends "base_form.html" %}
+{% load i18n %}
+{% block formcontent %}
+<h4 class="text-left">
+    {% trans "vouchercode_heading1" %}
+</h4>
+{% if application_model.vouchercode_str %}
+<div class="alert alert-success" role="alert">
+    {% trans "vouchercode_enetered_code" %}
+</div>
+{% endif %}
+<div class="voucher-code-input-form">
+    {% trans "vouchercode_title_text" as vouchercode_title_text %}
+    {% trans "vouchercode_example_text" as vouchercode_example_text %}
+    {% include "text_input_form.html" with extra_form_field_class="px-0" extra_styles="max-width: 240px;" form_field=form.voucher_input title_text=vouchercode_title_text example_text=vouchercode_example_text%}
+</div>
+<p class="my-2">
+    <a class="text-primary" href="{% url 'no-code' %}">{% trans "vouchercode_no_accesscode" %}</a>
+</p>
+<div class="alert alert-info my-3" role="alert">
+    <p>{% trans "vouchercode_application_note1" %}</p>
+    <p>
+{% blocktrans with customer_service_phone_number=customer_service_phone_number %}
+Need help? Please call Customer Service at {{customer_service_phone_number}}.
+{% endblocktrans %}
+    </p>
+</div>
+{% endblock %}
+{% block extra_body_scripts %}
+<script>
+    function isVoucherKey(evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode;
+        return (charCode == 45) || // dash
+            (charCode > 64 && charCode < 91) || // upercase letters
+            (charCode > 96 && charCode < 123) || // lowercase letters
+            (charCode == 13); // enter key for form submission
+    }
+</script>
+{% endblock extra_body_scripts %}

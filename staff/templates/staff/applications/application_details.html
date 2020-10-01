@@ -1,0 +1,196 @@
+{% extends "base_staff.html" %}
+{% block title %}CCF | Staff | Application {% endblock %}
+{% block sidebar-ccf-application-items %} {{block.super}}
+{% endblock sidebar-ccf-application-items %}
+
+{% block main %}
+<nav aria-label="breadcrumb" class="h5 pt-3 pb-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a
+                href="{% url 'staff:ccf-application-list' %}">Applications</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+            [{{ application.last_name }}, {{ application.first_name }}]</li>
+    </ol>
+</nav>
+<div class="card mb-5 shadow-sm">
+    <div class="card-header px-3 bg-white">
+        <div class="row justify-content-between">
+            <div class="col-4">
+                <h5>Profile</h5>
+            </div>
+            <div class="col-4 text-right">
+                <a class="btn btn-light btn-sm border shadow-sm"
+                    href="{% url 'staff:application-update' application.application_id %}">
+                    <i class="material-icons md-18">edit</i>Edit</a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm">
+                <p>APPLICATION INFORMATION</p>
+                <div class="table-responsive">
+                    <table class="table table-sm table-borderless m-0">
+                        <tr>
+                            <td class="text-secondary">Name (last, first)</td>
+                            <td>{{ application.last_name }},
+                                {{ application.first_name }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">Voucher Code</td>
+                            <td>{{ application.vouchercode_str }}</a></td>
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">Channel</td>
+                            <td>{{ code.channel }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">Affiliate</td>
+                            <td>{{ code.affiliate }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">Campaign</td>
+                            <td>{{ code.campaign }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">Submit date</td>
+                            <td>{{ application.submitted_date }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">Preferred language</td>
+                            <td>{{ application.get_language_display }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">Status</td>
+                            <td>{{ application.get_status_display }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">Status Last Modified</td>
+                            <td>{{ application.status_last_modified }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">Note</td>
+                            <td>{{ application.note }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-sm">
+                <p>CONTACT INFORMATION</p>
+                <div class="table-responsive">
+                    <table class="table table-sm table-borderless">
+                        <tr>
+                            <td class="text-secondary">Email</td>
+                            <td>{{ application.email }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">Phone</td>
+                            <td>{{ application.phone_number }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">Street</td>
+                            <td>{{ application.addr1 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">Street (contd.)</td>
+                            <td>{{ application.addr2 }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">City</td>
+                            <td>{{ application.city }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">State</td>
+                            <td>{{ application.state }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">Zip</td>
+                            <td>{{ application.zip_code }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">USPS Standardized</td>
+                            <td>{{ application.usps_standardized }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-secondary">USPS Verified</td>
+                            <td>{{ application.usps_verified }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% if application.statusupdate_set.all %}
+<div class="card mb-5 shadow-sm" style="width:400px;">
+    <div class="card-header px-3 bg-white">
+        <h5>Status Updates</h5>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for update in application.statusupdate_set.all %}
+                <tr>
+                    <td>{{ update.date }}</td>
+                    <td>{{ update.get_status_display }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+{% if application.adminaction_set.all %}
+<div class="card mb-5 shadow-sm" style="width:800px">
+    <div class="card-header px-3 bg-white">
+        <h5>Admin Actions</h5>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Action Type</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Changed Fields</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for action in application.adminaction_set.all %}
+                <tr>
+                    <td>{{ action.date }}</td>
+                    <td>{{ action.get_action_type_display }}</td>
+                    <td>{{ action.user }}</td>
+                    <td>
+                        <table class="table-sm">
+                            <tbody>
+                                {% for field in action.changed_fields %}
+                                <tr>
+                                    <td>{{field.0}}:</td>
+                                    <td>
+                                        {% if field.1 %}
+                                        <span><strike>{{ field.1 }}</strike></span><br />
+                                        {% endif %}
+                                        <span
+                                            class="text-success">{{ field.2 }}</span>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+{% endblock main %}

@@ -1,0 +1,19 @@
+{% extends "base_ccf.html" %}
+{% load i18n %}
+{% block content %}
+<div class="row">
+    <div class="col">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <h4 class="text-left">
+                {% trans 'novouchercode_heading' %}
+            </h4>
+            <p>
+                {% trans 'novouchercode_paragraph1' %}
+                <a class="text-primary" href="{{ faq_link_url }}" target="_blank">{{ faq_link_text }}</a>.
+            </p>
+        </form>
+    </div>
+</div>
+{% endblock %}

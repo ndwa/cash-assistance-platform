@@ -1,0 +1,236 @@
+{% extends "base_staff.html" %}
+{% block title %}CCF | Staff | Voucher codes {% endblock %}
+{% block sidebar-ccf-application-items %} {{block.super}}
+{% endblock sidebar-ccf-application-items %}
+
+
+{% block main %}
+
+<div class="p-4 container-fluid">
+  <!-- Generate code success alert -->
+  {% if form.errors %}
+  <div class="alert alert-danger" role="">
+    <b>Error(s):</b>
+    {{ form.errors }}
+  </div>
+  {% elif success %}
+  <p class="alert alert-success" role="">
+    Successfully generated
+    {{ num_codes_generated }}
+    new code(s):
+    <a href="{% url 'staff:download-voucher' batch_id %}">
+      {{ batch_id }}<i class="material-icons" style="vertical-align: middle">file_download</i>
+    </a>
+  </p>
+  {% endif %}
+
+  <!-- Generate code form -->
+  <h3>
+    Generate codes
+  </h3>
+
+  <p style="font-size: 0.01em"></p>
+  <div class="row text-justify">
+    <div class="col">
+      <div class="form-group">
+        <form class="border col-4 p-3" id="voucher_form" method="post">
+          {% csrf_token %}
+          <label><b>number of codes:</b></label>
+          <div class="col-4 px-0">
+            {{ form.num_codes }}
+          </div>
+          <br />
+          <label><b>alphabet:</b></label>
+          abcdefghijkmnopqrstuvwxyz (25 chars)
+          <br/>
+          <label><b>code length:</b></label>
+          9
+          <br/>
+          <label><b>affiliate:</b> (50 chars max)</label>
+          <div class="col-9 px-0">{{ form.affiliate }}</div>
+          <br />
+          <label><b>campaign:</b> (50 chars max)</label>
+          <div class="col-9 px-0">{{ form.campaign }}</div>
+          <br />
+          <label><b>channel:</b> (50 chars max)</label>
+          <div class="col-9 px-0">{{ form.channel }}</div>
+          <br />
+          <label><b>amount ($):</b></label>
+          <br />
+          <input type="checkbox" id="edit-amount-checkbox" name="edit-amount" value="edit-amount">
+          <label for="edit-amount-checkbox">Edit</label><br>
+          <div class="col-4 px-0">{{ form.base_amount }}</div>
+          <br/>
+          <label><b>expiration:</b></label>
+          <div class="col-9 px-0">{{ form.expiration_date }}</div>
+          <p></p>
+          <div class=""><input class="btn btn-primary btn-sm" type="submit" id="submit-btn" value="submit"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Generate code confirmation modal -->
+<div class="modal" id="confirm-generate-mdl" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        Review
+      </div>
+      <div class="modal-body">
+        <p>
+          You are about to create
+          <b><span id="entered_num_codes" style="white-space: pre-wrap;"></span></b>
+          codes with the following specifications:
+        </p>
+        <ul style="list-style-type:none">
+          <li><b>affiliate:</b> <span id="entered_affiliate"></span></li>
+          <li><b>campaign:</b> <span id="entered_campaign"></span></li>
+          <li><b>channel:</b> <span id="entered_channel"></span></li>
+          <li><b>amount:</b> $<span id="entered_base_amount"></span></li>
+          <li><b>expiration:</b> <span id="entered_expiration"></span></li>
+        </ul>
+        <button type="button" id="confirm-btn" class="btn btn-info btn-block btn-large text-uppercase">
+          Confirm
+        </button>
+        <button type="button" class="btn btn-outline-secondary btn-block btn-large text-uppercase" data-dismiss="modal">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Previously generated code batches -->
+<div class="p-4 container-fluid">
+  <p class="h3">History</p>
+  <div>
+    <table class="table table-hover mt-4">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">User</th>
+          <th scope="col"># Codes</th>
+          <th scope="col">Affiliate</th>
+          <th scope="col">Campaign</th>
+          <th scope="col">Channel</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Expiration</th>
+          <th scope="col">CSV</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for batch in object_list %}
+        <tr>
+          <td>{{ batch.created }}</td>
+          <td>{{ batch.user }}</td>
+          <td>{{ batch.num_codes }}</td>
+          <td>{{ batch.affiliate }}</td>
+          <td>{{ batch.campaign }}</td>
+          <td>{{ batch.channel }}</td>
+          <td>{{ batch.base_amount }}</td>
+          <td>{{ batch.expiration_date }}</td>
+          <td><a href="{% url 'staff:download-voucher' batch.id %}" download>
+            <i class="material-icons" style="vertical-align: middle">file_download</i>
+            {{ batch.id }}
+          </a></td>
+          <td><a class="invalidate"  style="color: red" value="{{ batch.id }}"><i class="material-icons md-18" style="vertical-align: middle">clear</i> Invalidate</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% include 'staff/snippets/pagination.html' %}
+  </div>
+</div>
+
+<!-- Invalidate confirmation modal -->
+<div class="modal" id="voucher-invalidate-mdl" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        Review
+      </div>
+      <div class="modal-body">
+
+        <p>
+          Are you sure you want to invalidate this batch of codes?
+          <ul>
+            <b><span id="num_codes" style="white-space: pre-wrap;"></span></b>
+          </ul>
+        </p>
+
+        <a type="button" id="submit-invalidate" class="btn btn-danger btn-block btn-large text-uppercase" href="">
+          Invalidate
+        </a>
+
+        <button type="button" class="btn btn-outline-secondary btn-block btn-large text-uppercase" data-dismiss="modal">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap/jQuery scripts -->
+<script
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous">
+</script>
+<script
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+crossorigin="anonymous">
+</script>
+
+<!-- Button setup scripts -->
+<script>
+  // Set up amount field behavior
+  $('#id_base_amount').prop('disabled', true);
+  $('#edit-amount-checkbox').change(function() {
+    $('#id_base_amount').prop('disabled', !this.checked);
+  });
+
+  // Set up confirmation modal when submit is clicked
+  $('#submit-btn').attr('type', 'button');
+  $('#submit-btn').click(function() {
+    var entered_num_codes = $('#id_num_codes').val();
+    var entered_affiliate = $('#id_affiliate').val();
+    var entered_campaign = $('#id_campaign').val();
+    var entered_channel = $('#id_channel').val();
+    var entered_base_amount = $('#id_base_amount').val();
+    var entered_expiration = $('#id_expiration_date').val();
+
+    $('#confirm-generate-mdl').modal('show');
+    $('#entered_num_codes').text(entered_num_codes);
+    $('#entered_affiliate').text(entered_affiliate);
+    $('#entered_campaign').text(entered_campaign);
+    $('#entered_channel').text(entered_channel);
+    $('#entered_base_amount').text(entered_base_amount);
+    $('#entered_expiration').text(entered_expiration);
+    $('#confirm-btn').click(function() {
+      // Need to un-disable before submit or it will treat the field as empty
+      $('#id_base_amount').prop('disabled', false);
+      $('#voucher_form').submit();
+    });
+
+  });
+
+  // Set up confirmation modal when invalidate is clicked
+  $('a.invalidate').attr('type', 'button');
+  $('a.invalidate').click(function() {
+    $('#voucher-invalidate-mdl').modal('show');
+    $('#num_codes').text(this.getAttribute('value'));
+
+    $('#submit-invalidate').attr('type', 'button');
+    $('#submit-invalidate').attr('href', "{% url 'staff:voucher-batch-invalidate' 'VALUE' %}")
+    $('#submit-invalidate').attr('href', $('#submit-invalidate').attr('href').replace('VALUE', this.getAttribute('value')));
+    $('#submit-invalidate').click(function() {
+      $('#voucher_form').submit();
+    });
+
+  });
+</script>
+
+{% endblock %}
