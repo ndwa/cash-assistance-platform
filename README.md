@@ -206,7 +206,7 @@ Visit `localhost:8000` in a browser to access the Applicant Form, and
 voucher codes necessary to complete the form (see detailed instructions in the
 [Wiki](https://github.com/ndwa/cash-assistance-platform/wiki)).
 
-### Running tests
+### Running the tests
 
 To run the Django unit tests, run `./manage.py test`.
 
