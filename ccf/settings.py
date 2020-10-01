@@ -142,7 +142,7 @@ else:  # local deployment
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'ccf_lite',
+            'NAME': 'myproject',
             'USER': 'myprojectuser',
             'PASSWORD': 'password',
             'HOST': 'localhost',
