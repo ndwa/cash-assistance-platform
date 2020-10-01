@@ -1,0 +1,18 @@
+runtime: python
+env: flex
+entrypoint: gunicorn ccf.wsgi
+
+beta_settings:
+    #cloud_sql_instances: <INSERT CONNECTION STRING HERE>
+
+runtime_config:
+  python_version: 3
+env_variables:
+  DJANGO_SETTINGS_MODULE: 'ccf.settings'
+  DJANGO_SECRET_KEY: '<INSERT KEY>'
+  SECURE_COOKIE: 'True'
+  USPS_USER_ID = '<INSERT USPS USER ID>'
+  #OPTIONAL BELOW BUT RECOMMENDED
+  #TWILIO_SMS_SENDER: '<INSERT SMS SENDER>'
+  #TWILIO_ACCOUNT_SID: '<INSERT SID>'
+  #TWILIO_AUTH_TOKEN: '<INSERT AUTH TOKEN>'
