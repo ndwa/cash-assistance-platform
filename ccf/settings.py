@@ -36,13 +36,8 @@ if not DEBUG:
 APP_TYPE = os.environ.get('APP_TYPE', 'LOCAL')
 
 ALLOWED_HOSTS = [
-    '.myalia.org',
-    '.elasticbeanstalk.com',
-    '.amazonaws.com',
+    '127.0.0.1',
     'localhost',
-    'phl-localhost',
-    'tus-localhost',
-    '.aliacares.org',
 ]
 
 INSTALLED_APPS = [
