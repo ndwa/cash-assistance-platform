@@ -16,7 +16,7 @@ customer service is critical. You can read more about this in
 
 ![image](https://user-images.githubusercontent.com/25941287/94732111-acea4780-031a-11eb-9f47-7dfdd80be0f9.png)
 
-### History
+## History
 
 CAP was built to support the distribution of cash funds to those in need during
 the COVID-19 pandemic. The Google.org fellowship team collaborated with NDWA to
