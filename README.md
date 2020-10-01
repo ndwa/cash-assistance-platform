@@ -62,12 +62,15 @@ the `virtualenvwrapper` docs for
 [installation & setup](https://virtualenvwrapper.readthedocs.io/en/latest/install.html).
 
 After installing `virtualenvwrapper`, create and activate your virtual
-environment (replace `myenv` with desired environment name):
+environment (replace `cap-dev` with desired environment name):
 
 ```
-$ mkvirtualenv myenv -p python3.7
+$ mkvirtualenv cap-dev -p python3.7
 $ workon myenv
 ```
+
+**Note**: Different virtual environments will be used to control the different
+environment variables nececessary for production/staging/dev database access.
 
 #### 2. Fork the Code
 
@@ -100,8 +103,9 @@ $ add2virtualenv path_to_source
 Include the rest of the required environment variables in the
 [postactivate](https://virtualenvwrapper.readthedocs.io/en/latest/scripts.html#postactivate)
 script of your virtual environment (found in `$VIRTUAL_ENV/bin/postactivate`) by
-copy/pasting the below code snippet, updating `DJANGO_SECRET_KEY` as described
-below and `USPS_USER_ID` per the instructions in the comments.
+copy/pasting the below code snippet, updating `DJANGO_SECRET_KEY` and `USPS_USER_ID`
+per the instructions in the comments. Unset the env vars (especially `RDS_*` vars) in 
+a corresponding `postdeactivate` script to avoid unintentional database access.
 
 ```
 # Django
