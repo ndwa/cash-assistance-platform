@@ -101,7 +101,7 @@ Include the rest of the required environment variables in the
 [postactivate](https://virtualenvwrapper.readthedocs.io/en/latest/scripts.html#postactivate)
 script of your virtual environment (found in `$VIRTUAL_ENV/bin/postactivate`) by
 copy/pasting the below code snippet, updating `DJANGO_SECRET_KEY` as described
-below, and
+below and `USPS_USER_ID` per the instructions in the comments.
 
 ```
 # Django
@@ -118,7 +118,7 @@ export RDS_USERNAME=
 export RDS_PASSWORD=
 
 # USPS verification - Required
-export USPS_USER_ID=  # [Free USPS Registration URL](https://registration.shippingapis.com/) - API key will be emailed
+export USPS_USER_ID=  # Register for free at https://registration.shippingapis.com/
 
 # Twilio - Optional variables to support text messaging with a Twilio account
 # export TWILIO_SMS_SENDER=
