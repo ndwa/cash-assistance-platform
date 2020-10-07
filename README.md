@@ -49,24 +49,36 @@ Mac users.
 
 #### 1. Install Python + Setup a Virtual Environment
 
-On a Mac with [Homebrew](https://brew.sh/), you can install `python3.7`,
+On a Mac with [Homebrew](https://brew.sh/), you can install `python3`,
 `libpq`, and `openssl` with:
 
 ```
 $ brew install python3 postgresql openssl
 ```
 
+As most Macs come with Python2 pre-installed, Homebrew will not replace your `python` with Python3.
+
 You will also need a Python virtual environment. Our recommendation is
 [`virtualenvwrapper`](https://virtualenvwrapper.readthedocs.io/en/latest/). See
 the `virtualenvwrapper` docs for
 [installation & setup](https://virtualenvwrapper.readthedocs.io/en/latest/install.html).
 
-After installing `virtualenvwrapper`, create and activate your virtual
-environment (replace `cap-dev` with desired environment name):
+After installing `virtualenvwrapper`, you will need to add the following lines
 
 ```
-$ mkvirtualenv cap-dev -p python3.7
-$ workon myenv
+# replace with whatever is the correct symlink to your installed python3
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/<your-development-folder>
+source /usr/local/bin/virtualenvwrapper.sh
+```
+to your `.bashrc`/`.profile`/`.zshrc`, etc.
+
+Create and activate your virtual environment (replace `<my-env-name>` with desired environment name):
+
+```
+$ mkvirtualenv <my-env-name>
+$ workon <my-env-name>
 ```
 
 **Note**: Different virtual environments will be used to control the different
@@ -88,7 +100,7 @@ With your virtual environment activated (see Step 1), install the Python
 requirements for the Django project.
 
 ```
-$ pip install -r requirements.txt
+$ pip3 install -r requirements.txt
 ```
 
 #### 4. Setup environment variables
@@ -104,7 +116,7 @@ Include the rest of the required environment variables in the
 [postactivate](https://virtualenvwrapper.readthedocs.io/en/latest/scripts.html#postactivate)
 script of your virtual environment (found in `$VIRTUAL_ENV/bin/postactivate`) by
 copy/pasting the below code snippet, updating `DJANGO_SECRET_KEY` and `USPS_USER_ID`
-per the instructions in the comments. Unset the env vars (especially `RDS_*` vars) in 
+per the instructions in the comments. Unset the env vars (especially `RDS_*` vars) in
 a corresponding `postdeactivate` script to avoid unintentional database access.
 
 ```
@@ -134,8 +146,22 @@ export USPS_USER_ID=  # Register for free at https://registration.shippingapis.c
 For the `DJANGO_SECRET_KEY`, run the following line to generate a unique value:
 
 ```
-python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+python3 -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
 ```
+
+Run
+
+```
+$ workon <my-env-name>
+```
+
+to activate your virtual env with the new environment variables. You can test whether it activated by running (for example)
+
+```
+$ echo $DJANGO_SECRET_KEY
+```
+
+and it should match the secret key you created in the last step.
 
 #### 5. Create log files
 
@@ -152,6 +178,10 @@ touch /var/app/log/info.log
 #### 6. Install PostgreSQL
 
 Install `postgres` and create a local PostgreSQL db:
+
+**Important**: You must use the specified names (`myproject`, `myprojectuser`,
+`password`) as these are used specifically in `ccf/settings.py`, or else
+reconfigure the settings file to your specification.
 
 ```
 $ brew install postgresql
@@ -170,10 +200,6 @@ postgres=# \q
 On linux, you can follow the instructions
 [here](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-14-04)
 (stop before “Install Django within a Virtual Environment”).
-
-**Important**: You must use the specified names (`myproject`, `myprojectuser`,
-`password`) as these are used specifically in `ccf/settings.py`, or else
-reconfigure the settings file to your specification.
 
 ```
 $ ./manage.py makemigrations # should do nothing
