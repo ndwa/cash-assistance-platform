@@ -1,3 +1,4 @@
+#FOR GOOGLE CLOUD APP ENGINE FLEX USE
 runtime: python
 env: flex
 entrypoint: gunicorn ccf.wsgi
