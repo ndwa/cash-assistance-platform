@@ -4,7 +4,7 @@
 
 The Cash Assistance Platform (CAP) is a software platform built to support the
 distribution of cash funds. The platform takes an opinionated approach to use
-voucher codes as means to distribute cash in a scalable and decentralized way.
+access codes as means to distribute cash in a scalable and decentralized way.
 An applicant who receives a code can proceed to fill out a form that is then
 approved in a staff portal by the administrator.
 
